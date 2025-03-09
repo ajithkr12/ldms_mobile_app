@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ldms_mobile_app/custom_widgets/CustomText.dart';
+import 'package:ldms_mobile_app/custom_widgets/custom_text.dart';
 
 class HeadingWithIconWidget extends StatelessWidget {
   const HeadingWithIconWidget({

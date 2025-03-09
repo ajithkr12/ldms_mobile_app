@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ldms_mobile_app/custom_widgets/CustomText.dart';
+import 'package:ldms_mobile_app/custom_widgets/custom_text.dart';
 
 class HeadingSubheadingWidget extends StatelessWidget {
   const HeadingSubheadingWidget({

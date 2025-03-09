@@ -9,28 +9,26 @@ class CustomText extends StatelessWidget {
   final double wordSpacing; // Added wordSpacing property
 
   const CustomText({
-    Key? key,
+    super.key,
     required this.text,
     this.color = const Color(0xffffffff),
     this.fontSize,
     this.fontWeight = FontWeight.normal,
-    this.letterSpacing = 0.0, // Default letterSpacing
-    this.wordSpacing = 0.0, // Default wordSpacing
-  }) : super(key: key);
+    this.letterSpacing = 0.0,
+    this.wordSpacing = 0.0,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      //textAlign: TextAlign.center,
       text,
       textAlign: TextAlign.start,
       style: TextStyle(
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
-        letterSpacing: letterSpacing, // Set letterSpacing
+        letterSpacing: letterSpacing,
         wordSpacing: wordSpacing,
-        // Set wordSpacing
       ),
     );
   }

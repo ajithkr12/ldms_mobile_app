@@ -6,7 +6,7 @@ import 'package:ldms_mobile_app/0-services/0-core/utility_services.dart';
 import 'package:ldms_mobile_app/constants/app_colors.dart';
 import 'package:ldms_mobile_app/constants/device_type.dart';
 import 'package:ldms_mobile_app/constants/place_types.dart';
-import 'package:ldms_mobile_app/custom_widgets/CustomText.dart';
+import 'package:ldms_mobile_app/custom_widgets/custom_text.dart';
 import 'package:ldms_mobile_app/custom_widgets/custom_button.dart';
 import 'package:ldms_mobile_app/custom_widgets/heading_subheading_widget.dart';
 import 'package:ldms_mobile_app/custom_widgets/heading_with_icon.dart';
@@ -138,8 +138,7 @@ class OrderHistory extends StatelessWidget {
               ],
             )),
             CustomIconButton(
-              onButtonPressed: () => _showCustomDialog(
-                  context), // Use a lambda to delay calling the function
+              onButtonPressed: () => _showCustomDialog(context), // Use a lambda to delay calling the function
               iconPath: 'assets/icons/plus.svg',
               iconColor: Colors.black,
             )
@@ -224,8 +223,7 @@ class TabBarSection extends StatelessWidget {
                     ExploreTabTypes.list.length,
                     (index) => TabMenuCard(
                       onClick: () {
-                        BlocProvider.of<HomeBloc>(context)
-                            .add(HomeEvent.selectTab(index));
+                        BlocProvider.of<HomeBloc>(context).add(HomeEvent.selectTab(index));
                       },
                       label: ExploreTabTypes.list[index]["name"],
                       iconUrl: ExploreTabTypes.list[index]["iconUrl"],
@@ -315,25 +313,19 @@ class OrderHistoryCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Order ${index + 1}",
-                      style: TextStyle(color: Colors.black)),
+                  Text("Order ${index + 1}", style: TextStyle(color: Colors.black)),
                   Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 3, horizontal: 18),
+                      padding: EdgeInsets.symmetric(vertical: 3, horizontal: 18),
                       decoration: BoxDecoration(
                         color: statusColor.withOpacity(0.1), // Background color
-                        borderRadius:
-                            BorderRadius.circular(18), // Rounded corners
+                        borderRadius: BorderRadius.circular(18), // Rounded corners
                         // border: Border.all(
                         //   color: statusColor,
                         //   width: 1, // Border width
                         // ),
                       ),
                       child: Text(orderStatusName,
-                          style: TextStyle(
-                              color: statusColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400))),
+                          style: TextStyle(color: statusColor, fontSize: 12, fontWeight: FontWeight.w400))),
                 ],
               ),
               Divider(
@@ -362,12 +354,8 @@ class OrderHistoryCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(deviceName,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black)),
-                            Text("$deviceType",
-                                style: TextStyle(color: Colors.black)),
+                            Text(deviceName, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+                            Text("$deviceType", style: TextStyle(color: Colors.black)),
                           ],
                         ),
                       ],
@@ -418,8 +406,7 @@ void _showCustomDialog(BuildContext context) {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
                   child: Form(
                     key: _formKey,
                     child: Column(
@@ -429,41 +416,29 @@ void _showCustomDialog(BuildContext context) {
                         SizedBox(
                           height: 60.0,
                           child: DropdownButtonFormField(
-                            style: const TextStyle(
-                                color: AppColors.textFieldFontColor,
-                                fontSize: 16),
+                            style: const TextStyle(color: AppColors.textFieldFontColor, fontSize: 16),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: AppColors.textFieldBorderColor),
+                                  borderSide: const BorderSide(color: AppColors.textFieldBorderColor),
                                   borderRadius: BorderRadius.circular(5.5)),
                               focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: AppColors.textFieldBorderColor),
+                                  borderSide: const BorderSide(color: AppColors.textFieldBorderColor),
                                   borderRadius: BorderRadius.circular(5.5)),
                               labelText: "Device Type",
-                              labelStyle: const TextStyle(
-                                  color: AppColors.textFieldLabelColor,
-                                  fontSize: 16),
+                              labelStyle: const TextStyle(color: AppColors.textFieldLabelColor, fontSize: 16),
                               filled: true,
                               fillColor: AppColors.textFieldFillColor,
                               border: const OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(8.0))),
-                              contentPadding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 16),
+                                  borderSide: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(8.0))),
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                             ),
                             value: state.orderData.deviceId,
                             dropdownColor: AppColors.textFieldFillColor,
                             iconEnabledColor: AppColors.textFieldBorderColor,
                             onChanged: (newValue) {
-                              mainContext.read<OrderHistoryBloc>().add(
-                                  OrderHistoryEvent.onChangeDeviceId(
-                                      newValue!));
+                              mainContext.read<OrderHistoryBloc>().add(OrderHistoryEvent.onChangeDeviceId(newValue!));
                             },
-                            items: DeviceType.deviceTypeList
-                                .map<DropdownMenuItem<String>>((device) {
+                            items: DeviceType.deviceTypeList.map<DropdownMenuItem<String>>((device) {
                               return DropdownMenuItem<String>(
                                 value: device['name'],
                                 child: Row(
@@ -475,8 +450,7 @@ void _showCustomDialog(BuildContext context) {
                                     const SizedBox(width: 8),
                                     Text(
                                       device['name'],
-                                      style: const TextStyle(
-                                          color: AppColors.textFieldFontColor),
+                                      style: const TextStyle(color: AppColors.textFieldFontColor),
                                     ),
                                   ],
                                 ),
@@ -503,26 +477,19 @@ void _showCustomDialog(BuildContext context) {
                                       child: CupertinoTheme(
                                         data: const CupertinoThemeData(
                                           textTheme: CupertinoTextThemeData(
-                                            dateTimePickerTextStyle: TextStyle(
-                                                fontSize: 24,
-                                                color: AppColors
-                                                    .textFieldFontColor),
+                                            dateTimePickerTextStyle:
+                                                TextStyle(fontSize: 24, color: AppColors.textFieldFontColor),
                                           ),
                                         ),
                                         child: CupertinoDatePicker(
-                                          initialDateTime:
-                                              state.orderData.orderDate,
-                                          mode: CupertinoDatePickerMode
-                                              .dateAndTime,
+                                          initialDateTime: state.orderData.orderDate,
+                                          mode: CupertinoDatePickerMode.dateAndTime,
                                           use24hFormat: false,
                                           showDayOfWeek: true,
-                                          onDateTimeChanged:
-                                              (DateTime newDate) {
+                                          onDateTimeChanged: (DateTime newDate) {
                                             mainContext
                                                 .read<OrderHistoryBloc>()
-                                                .add(OrderHistoryEvent
-                                                    .onChangeOrderDate(
-                                                        newDate));
+                                                .add(OrderHistoryEvent.onChangeOrderDate(newDate));
                                           },
                                         ),
                                       ),
@@ -531,12 +498,10 @@ void _showCustomDialog(BuildContext context) {
                             },
                             child: Container(
                               height: 60.0,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12.0, vertical: 12.0),
+                              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      color: AppColors
-                                          .textFieldBorderColor //                   <--- border color
+                                      color: AppColors.textFieldBorderColor //                   <--- border color
                                       // width: 5.0,
                                       ),
                                   borderRadius: BorderRadius.circular(5.5),
@@ -571,14 +536,12 @@ void _showCustomDialog(BuildContext context) {
                               width: screenWidth / 2.5,
                               child: CustomButton(
                                 inputText: "CANCEL",
-                                backgroundColor:
-                                    const Color.fromARGB(255, 255, 255, 255),
+                                backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                                 fontColor: AppColors.customButtonColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 onButtonPressed: () {
-                                  Navigator.pop(
-                                      context); // Navigate back to the previous screen
+                                  Navigator.pop(context); // Navigate back to the previous screen
                                 },
                                 borderRadius: 8,
                                 borderColor: AppColors.customButtonColor,
@@ -594,8 +557,7 @@ void _showCustomDialog(BuildContext context) {
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 onButtonPressed: () {
-                                  mainContext.read<OrderHistoryBloc>().add(
-                                      OrderHistoryEvent.submitOrderDetails());
+                                  mainContext.read<OrderHistoryBloc>().add(OrderHistoryEvent.submitOrderDetails());
                                 },
                                 borderRadius: 8,
                                 height: 42,

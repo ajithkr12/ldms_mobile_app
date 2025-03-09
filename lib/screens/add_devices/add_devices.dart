@@ -6,7 +6,7 @@ import 'package:ldms_mobile_app/0-services/0-core/utility_services.dart';
 import 'package:ldms_mobile_app/constants/app_colors.dart';
 import 'package:ldms_mobile_app/constants/device_type.dart';
 import 'package:ldms_mobile_app/constants/place_types.dart';
-import 'package:ldms_mobile_app/custom_widgets/CustomText.dart';
+import 'package:ldms_mobile_app/custom_widgets/custom_text.dart';
 import 'package:ldms_mobile_app/custom_widgets/custom_button.dart';
 import 'package:ldms_mobile_app/custom_widgets/heading_subheading_widget.dart';
 import 'package:ldms_mobile_app/custom_widgets/heading_with_icon.dart';
@@ -47,8 +47,7 @@ class AddDevices extends StatelessWidget {
                 SizedBox(width: 12.0),
               ],
             )),
-            CustomIconButton(
-                onButtonPressed: onPressed, iconPath: 'assets/icons/bell.svg')
+            CustomIconButton(onButtonPressed: onPressed, iconPath: 'assets/icons/bell.svg')
           ],
         ),
       ),
@@ -77,29 +76,20 @@ class AddDevices extends StatelessWidget {
                             child: TextFormField(
                               initialValue: state.deviceData.serialNumber,
                               onChanged: (value) {
-                                mainContext.read<AddDevicesBloc>().add(
-                                    AddDevicesEvent.onChangeSerialNumber(
-                                        value));
+                                mainContext.read<AddDevicesBloc>().add(AddDevicesEvent.onChangeSerialNumber(value));
                               },
-                              style: const TextStyle(
-                                  color: AppColors.textFieldFontColor,
-                                  fontSize: 16),
+                              style: const TextStyle(color: AppColors.textFieldFontColor, fontSize: 16),
                               decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: AppColors.textFieldBorderColor),
+                                    borderSide: const BorderSide(color: AppColors.textFieldBorderColor),
                                     borderRadius: BorderRadius.circular(5.5)),
                                 focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(5.5)),
+                                    borderSide: BorderSide.none, borderRadius: BorderRadius.circular(5.5)),
                                 labelText: "Enter Serial Number",
-                                labelStyle: const TextStyle(
-                                    color: AppColors.textFieldLabelColor,
-                                    fontSize: 16),
+                                labelStyle: const TextStyle(color: AppColors.textFieldLabelColor, fontSize: 16),
                                 filled: true,
                                 fillColor: AppColors.textFieldFillColor,
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 16, horizontal: 16),
+                                contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                               ),
                             ),
                           ),
@@ -109,28 +99,20 @@ class AddDevices extends StatelessWidget {
                             child: TextFormField(
                               initialValue: state.deviceData.deviceName,
                               onChanged: (value) {
-                                mainContext.read<AddDevicesBloc>().add(
-                                    AddDevicesEvent.onChangeDeviceName(value));
+                                mainContext.read<AddDevicesBloc>().add(AddDevicesEvent.onChangeDeviceName(value));
                               },
-                              style: const TextStyle(
-                                  color: AppColors.textFieldFontColor,
-                                  fontSize: 16),
+                              style: const TextStyle(color: AppColors.textFieldFontColor, fontSize: 16),
                               decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: AppColors.textFieldBorderColor),
+                                    borderSide: const BorderSide(color: AppColors.textFieldBorderColor),
                                     borderRadius: BorderRadius.circular(5.5)),
                                 focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(5.5)),
+                                    borderSide: BorderSide.none, borderRadius: BorderRadius.circular(5.5)),
                                 labelText: "Enter Device Name",
-                                labelStyle: const TextStyle(
-                                    color: AppColors.textFieldLabelColor,
-                                    fontSize: 16),
+                                labelStyle: const TextStyle(color: AppColors.textFieldLabelColor, fontSize: 16),
                                 filled: true,
                                 fillColor: AppColors.textFieldFillColor,
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 16, horizontal: 16),
+                                contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                               ),
                             ),
                           ),
@@ -138,40 +120,28 @@ class AddDevices extends StatelessWidget {
                           SizedBox(
                             height: 60.0,
                             child: DropdownButtonFormField(
-                              style: const TextStyle(
-                                  color: AppColors.textFieldFontColor,
-                                  fontSize: 16),
+                              style: const TextStyle(color: AppColors.textFieldFontColor, fontSize: 16),
                               decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: AppColors.textFieldBorderColor),
+                                    borderSide: const BorderSide(color: AppColors.textFieldBorderColor),
                                     borderRadius: BorderRadius.circular(5.5)),
                                 focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(5.5)),
+                                    borderSide: BorderSide.none, borderRadius: BorderRadius.circular(5.5)),
                                 labelText: "Device Type",
-                                labelStyle: const TextStyle(
-                                    color: AppColors.textFieldLabelColor,
-                                    fontSize: 16),
+                                labelStyle: const TextStyle(color: AppColors.textFieldLabelColor, fontSize: 16),
                                 filled: true,
                                 fillColor: AppColors.textFieldFillColor,
                                 border: const OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(8.0))),
-                                contentPadding: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 16),
+                                    borderSide: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(8.0))),
+                                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                               ),
                               value: state.deviceData.deviceType,
                               dropdownColor: AppColors.textFieldFillColor,
                               iconEnabledColor: AppColors.textFieldBorderColor,
                               onChanged: (newValue) {
-                                mainContext.read<AddDevicesBloc>().add(
-                                    AddDevicesEvent.onChangeDeviceType(
-                                        newValue!));
+                                mainContext.read<AddDevicesBloc>().add(AddDevicesEvent.onChangeDeviceType(newValue!));
                               },
-                              items: DeviceType.deviceTypeList
-                                  .map<DropdownMenuItem<String>>((device) {
+                              items: DeviceType.deviceTypeList.map<DropdownMenuItem<String>>((device) {
                                 return DropdownMenuItem<String>(
                                   value: device['name'],
                                   child: Row(
@@ -183,9 +153,7 @@ class AddDevices extends StatelessWidget {
                                       const SizedBox(width: 8),
                                       Text(
                                         device['name'],
-                                        style: const TextStyle(
-                                            color:
-                                                AppColors.textFieldFontColor),
+                                        style: const TextStyle(color: AppColors.textFieldFontColor),
                                       ),
                                     ],
                                   ),
@@ -212,26 +180,18 @@ class AddDevices extends StatelessWidget {
                                           data: const CupertinoThemeData(
                                             textTheme: CupertinoTextThemeData(
                                               dateTimePickerTextStyle:
-                                                  TextStyle(
-                                                      fontSize: 24,
-                                                      color: AppColors
-                                                          .textFieldFontColor),
+                                                  TextStyle(fontSize: 24, color: AppColors.textFieldFontColor),
                                             ),
                                           ),
                                           child: CupertinoDatePicker(
-                                            initialDateTime:
-                                                state.deviceData.implementDate,
-                                            mode: CupertinoDatePickerMode
-                                                .dateAndTime,
+                                            initialDateTime: state.deviceData.implementDate,
+                                            mode: CupertinoDatePickerMode.dateAndTime,
                                             use24hFormat: false,
                                             showDayOfWeek: true,
-                                            onDateTimeChanged:
-                                                (DateTime newDate) {
+                                            onDateTimeChanged: (DateTime newDate) {
                                               mainContext
                                                   .read<AddDevicesBloc>()
-                                                  .add(AddDevicesEvent
-                                                      .onChangeImplementDate(
-                                                          newDate));
+                                                  .add(AddDevicesEvent.onChangeImplementDate(newDate));
                                             },
                                           ),
                                         ),
@@ -240,11 +200,9 @@ class AddDevices extends StatelessWidget {
                               },
                               child: Container(
                                 height: 50.0,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 12.0, vertical: 12.0),
+                                padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5.5),
-                                    color: AppColors.textFieldFillColor),
+                                    borderRadius: BorderRadius.circular(5.5), color: AppColors.textFieldFillColor),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -279,9 +237,7 @@ class AddDevices extends StatelessWidget {
                         backgroundColor: AppColors.customButtonColor,
                         fontColor: AppColors.customButtonFontColor,
                         onButtonPressed: () {
-                          mainContext
-                              .read<AddDevicesBloc>()
-                              .add(AddDevicesEvent.submitDeviceDetails());
+                          mainContext.read<AddDevicesBloc>().add(AddDevicesEvent.submitDeviceDetails());
                         },
                         borderRadius: 12),
                   ),
@@ -319,8 +275,7 @@ class TabBarSection extends StatelessWidget {
                     ExploreTabTypes.list.length,
                     (index) => TabMenuCard(
                       onClick: () {
-                        BlocProvider.of<HomeBloc>(context)
-                            .add(HomeEvent.selectTab(index));
+                        BlocProvider.of<HomeBloc>(context).add(HomeEvent.selectTab(index));
                       },
                       label: ExploreTabTypes.list[index]["name"],
                       iconUrl: ExploreTabTypes.list[index]["iconUrl"],

@@ -85,14 +85,10 @@ class _AppViewState extends State<AppView> {
                 );
               }
             },
-            child: child ?? const SizedBox(), // Prevents null child
+            child: child ?? const SizedBox(),
           );
         },
         home: const SplashPage(),
-        // home: MainScreen(),
-        // home: const SignIn(),
-        // home: SignUp(),
-        // onGenerateRoute: (_) => SplashPage.route(),
       ),
     );
   }

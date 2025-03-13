@@ -9,9 +9,7 @@ class OrderHistoryEvent with _$OrderHistoryEvent {
   factory OrderHistoryEvent.setLoading() = SetLoading;
   factory OrderHistoryEvent.submitOrderDetails() = SubmitOrderDetails;
 
-  factory OrderHistoryEvent.onChangeOrderDate(DateTime orderDate) =
-      OnChangeOrderDate;
+  factory OrderHistoryEvent.onChangeOrderDate(DateTime orderDate) = OnChangeOrderDate;
 
-  factory OrderHistoryEvent.onChangeDeviceId(String deviceId) =
-      OnChangeDeviceId;
+  factory OrderHistoryEvent.onChangeResourceId(String deviceId) = OnChangeResourceId;
 }

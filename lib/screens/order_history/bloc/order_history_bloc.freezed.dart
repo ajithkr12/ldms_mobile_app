@@ -22,7 +22,7 @@ mixin _$OrderHistoryEvent {
     required TResult Function() setLoading,
     required TResult Function() submitOrderDetails,
     required TResult Function(DateTime orderDate) onChangeOrderDate,
-    required TResult Function(String deviceId) onChangeDeviceId,
+    required TResult Function(String deviceId) onChangeResourceId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,7 +31,7 @@ mixin _$OrderHistoryEvent {
     TResult? Function()? setLoading,
     TResult? Function()? submitOrderDetails,
     TResult? Function(DateTime orderDate)? onChangeOrderDate,
-    TResult? Function(String deviceId)? onChangeDeviceId,
+    TResult? Function(String deviceId)? onChangeResourceId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$OrderHistoryEvent {
     TResult Function()? setLoading,
     TResult Function()? submitOrderDetails,
     TResult Function(DateTime orderDate)? onChangeOrderDate,
-    TResult Function(String deviceId)? onChangeDeviceId,
+    TResult Function(String deviceId)? onChangeResourceId,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,7 +50,7 @@ mixin _$OrderHistoryEvent {
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitOrderDetails value) submitOrderDetails,
     required TResult Function(OnChangeOrderDate value) onChangeOrderDate,
-    required TResult Function(OnChangeDeviceId value) onChangeDeviceId,
+    required TResult Function(OnChangeResourceId value) onChangeResourceId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,7 +59,7 @@ mixin _$OrderHistoryEvent {
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult? Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult? Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult? Function(OnChangeResourceId value)? onChangeResourceId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,7 +68,7 @@ mixin _$OrderHistoryEvent {
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult Function(OnChangeResourceId value)? onChangeResourceId,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,7 +134,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() setLoading,
     required TResult Function() submitOrderDetails,
     required TResult Function(DateTime orderDate) onChangeOrderDate,
-    required TResult Function(String deviceId) onChangeDeviceId,
+    required TResult Function(String deviceId) onChangeResourceId,
   }) {
     return started();
   }
@@ -146,7 +146,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? setLoading,
     TResult? Function()? submitOrderDetails,
     TResult? Function(DateTime orderDate)? onChangeOrderDate,
-    TResult? Function(String deviceId)? onChangeDeviceId,
+    TResult? Function(String deviceId)? onChangeResourceId,
   }) {
     return started?.call();
   }
@@ -158,7 +158,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? setLoading,
     TResult Function()? submitOrderDetails,
     TResult Function(DateTime orderDate)? onChangeOrderDate,
-    TResult Function(String deviceId)? onChangeDeviceId,
+    TResult Function(String deviceId)? onChangeResourceId,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -174,7 +174,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitOrderDetails value) submitOrderDetails,
     required TResult Function(OnChangeOrderDate value) onChangeOrderDate,
-    required TResult Function(OnChangeDeviceId value) onChangeDeviceId,
+    required TResult Function(OnChangeResourceId value) onChangeResourceId,
   }) {
     return started(this);
   }
@@ -186,7 +186,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult? Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult? Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult? Function(OnChangeResourceId value)? onChangeResourceId,
   }) {
     return started?.call(this);
   }
@@ -198,7 +198,7 @@ class _$StartedImpl implements _Started {
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult Function(OnChangeResourceId value)? onChangeResourceId,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -254,7 +254,7 @@ class _$SetLoadingImpl implements SetLoading {
     required TResult Function() setLoading,
     required TResult Function() submitOrderDetails,
     required TResult Function(DateTime orderDate) onChangeOrderDate,
-    required TResult Function(String deviceId) onChangeDeviceId,
+    required TResult Function(String deviceId) onChangeResourceId,
   }) {
     return setLoading();
   }
@@ -266,7 +266,7 @@ class _$SetLoadingImpl implements SetLoading {
     TResult? Function()? setLoading,
     TResult? Function()? submitOrderDetails,
     TResult? Function(DateTime orderDate)? onChangeOrderDate,
-    TResult? Function(String deviceId)? onChangeDeviceId,
+    TResult? Function(String deviceId)? onChangeResourceId,
   }) {
     return setLoading?.call();
   }
@@ -278,7 +278,7 @@ class _$SetLoadingImpl implements SetLoading {
     TResult Function()? setLoading,
     TResult Function()? submitOrderDetails,
     TResult Function(DateTime orderDate)? onChangeOrderDate,
-    TResult Function(String deviceId)? onChangeDeviceId,
+    TResult Function(String deviceId)? onChangeResourceId,
     required TResult orElse(),
   }) {
     if (setLoading != null) {
@@ -294,7 +294,7 @@ class _$SetLoadingImpl implements SetLoading {
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitOrderDetails value) submitOrderDetails,
     required TResult Function(OnChangeOrderDate value) onChangeOrderDate,
-    required TResult Function(OnChangeDeviceId value) onChangeDeviceId,
+    required TResult Function(OnChangeResourceId value) onChangeResourceId,
   }) {
     return setLoading(this);
   }
@@ -306,7 +306,7 @@ class _$SetLoadingImpl implements SetLoading {
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult? Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult? Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult? Function(OnChangeResourceId value)? onChangeResourceId,
   }) {
     return setLoading?.call(this);
   }
@@ -318,7 +318,7 @@ class _$SetLoadingImpl implements SetLoading {
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult Function(OnChangeResourceId value)? onChangeResourceId,
     required TResult orElse(),
   }) {
     if (setLoading != null) {
@@ -374,7 +374,7 @@ class _$SubmitOrderDetailsImpl implements SubmitOrderDetails {
     required TResult Function() setLoading,
     required TResult Function() submitOrderDetails,
     required TResult Function(DateTime orderDate) onChangeOrderDate,
-    required TResult Function(String deviceId) onChangeDeviceId,
+    required TResult Function(String deviceId) onChangeResourceId,
   }) {
     return submitOrderDetails();
   }
@@ -386,7 +386,7 @@ class _$SubmitOrderDetailsImpl implements SubmitOrderDetails {
     TResult? Function()? setLoading,
     TResult? Function()? submitOrderDetails,
     TResult? Function(DateTime orderDate)? onChangeOrderDate,
-    TResult? Function(String deviceId)? onChangeDeviceId,
+    TResult? Function(String deviceId)? onChangeResourceId,
   }) {
     return submitOrderDetails?.call();
   }
@@ -398,7 +398,7 @@ class _$SubmitOrderDetailsImpl implements SubmitOrderDetails {
     TResult Function()? setLoading,
     TResult Function()? submitOrderDetails,
     TResult Function(DateTime orderDate)? onChangeOrderDate,
-    TResult Function(String deviceId)? onChangeDeviceId,
+    TResult Function(String deviceId)? onChangeResourceId,
     required TResult orElse(),
   }) {
     if (submitOrderDetails != null) {
@@ -414,7 +414,7 @@ class _$SubmitOrderDetailsImpl implements SubmitOrderDetails {
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitOrderDetails value) submitOrderDetails,
     required TResult Function(OnChangeOrderDate value) onChangeOrderDate,
-    required TResult Function(OnChangeDeviceId value) onChangeDeviceId,
+    required TResult Function(OnChangeResourceId value) onChangeResourceId,
   }) {
     return submitOrderDetails(this);
   }
@@ -426,7 +426,7 @@ class _$SubmitOrderDetailsImpl implements SubmitOrderDetails {
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult? Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult? Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult? Function(OnChangeResourceId value)? onChangeResourceId,
   }) {
     return submitOrderDetails?.call(this);
   }
@@ -438,7 +438,7 @@ class _$SubmitOrderDetailsImpl implements SubmitOrderDetails {
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult Function(OnChangeResourceId value)? onChangeResourceId,
     required TResult orElse(),
   }) {
     if (submitOrderDetails != null) {
@@ -522,7 +522,7 @@ class _$OnChangeOrderDateImpl implements OnChangeOrderDate {
     required TResult Function() setLoading,
     required TResult Function() submitOrderDetails,
     required TResult Function(DateTime orderDate) onChangeOrderDate,
-    required TResult Function(String deviceId) onChangeDeviceId,
+    required TResult Function(String deviceId) onChangeResourceId,
   }) {
     return onChangeOrderDate(orderDate);
   }
@@ -534,7 +534,7 @@ class _$OnChangeOrderDateImpl implements OnChangeOrderDate {
     TResult? Function()? setLoading,
     TResult? Function()? submitOrderDetails,
     TResult? Function(DateTime orderDate)? onChangeOrderDate,
-    TResult? Function(String deviceId)? onChangeDeviceId,
+    TResult? Function(String deviceId)? onChangeResourceId,
   }) {
     return onChangeOrderDate?.call(orderDate);
   }
@@ -546,7 +546,7 @@ class _$OnChangeOrderDateImpl implements OnChangeOrderDate {
     TResult Function()? setLoading,
     TResult Function()? submitOrderDetails,
     TResult Function(DateTime orderDate)? onChangeOrderDate,
-    TResult Function(String deviceId)? onChangeDeviceId,
+    TResult Function(String deviceId)? onChangeResourceId,
     required TResult orElse(),
   }) {
     if (onChangeOrderDate != null) {
@@ -562,7 +562,7 @@ class _$OnChangeOrderDateImpl implements OnChangeOrderDate {
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitOrderDetails value) submitOrderDetails,
     required TResult Function(OnChangeOrderDate value) onChangeOrderDate,
-    required TResult Function(OnChangeDeviceId value) onChangeDeviceId,
+    required TResult Function(OnChangeResourceId value) onChangeResourceId,
   }) {
     return onChangeOrderDate(this);
   }
@@ -574,7 +574,7 @@ class _$OnChangeOrderDateImpl implements OnChangeOrderDate {
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult? Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult? Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult? Function(OnChangeResourceId value)? onChangeResourceId,
   }) {
     return onChangeOrderDate?.call(this);
   }
@@ -586,7 +586,7 @@ class _$OnChangeOrderDateImpl implements OnChangeOrderDate {
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult Function(OnChangeResourceId value)? onChangeResourceId,
     required TResult orElse(),
   }) {
     if (onChangeOrderDate != null) {
@@ -606,20 +606,20 @@ abstract class OnChangeOrderDate implements OrderHistoryEvent {
 }
 
 /// @nodoc
-abstract class _$$OnChangeDeviceIdImplCopyWith<$Res> {
-  factory _$$OnChangeDeviceIdImplCopyWith(_$OnChangeDeviceIdImpl value,
-          $Res Function(_$OnChangeDeviceIdImpl) then) =
-      __$$OnChangeDeviceIdImplCopyWithImpl<$Res>;
+abstract class _$$OnChangeResourceIdImplCopyWith<$Res> {
+  factory _$$OnChangeResourceIdImplCopyWith(_$OnChangeResourceIdImpl value,
+          $Res Function(_$OnChangeResourceIdImpl) then) =
+      __$$OnChangeResourceIdImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String deviceId});
 }
 
 /// @nodoc
-class __$$OnChangeDeviceIdImplCopyWithImpl<$Res>
-    extends _$OrderHistoryEventCopyWithImpl<$Res, _$OnChangeDeviceIdImpl>
-    implements _$$OnChangeDeviceIdImplCopyWith<$Res> {
-  __$$OnChangeDeviceIdImplCopyWithImpl(_$OnChangeDeviceIdImpl _value,
-      $Res Function(_$OnChangeDeviceIdImpl) _then)
+class __$$OnChangeResourceIdImplCopyWithImpl<$Res>
+    extends _$OrderHistoryEventCopyWithImpl<$Res, _$OnChangeResourceIdImpl>
+    implements _$$OnChangeResourceIdImplCopyWith<$Res> {
+  __$$OnChangeResourceIdImplCopyWithImpl(_$OnChangeResourceIdImpl _value,
+      $Res Function(_$OnChangeResourceIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -627,7 +627,7 @@ class __$$OnChangeDeviceIdImplCopyWithImpl<$Res>
   $Res call({
     Object? deviceId = null,
   }) {
-    return _then(_$OnChangeDeviceIdImpl(
+    return _then(_$OnChangeResourceIdImpl(
       null == deviceId
           ? _value.deviceId
           : deviceId // ignore: cast_nullable_to_non_nullable
@@ -638,22 +638,22 @@ class __$$OnChangeDeviceIdImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnChangeDeviceIdImpl implements OnChangeDeviceId {
-  _$OnChangeDeviceIdImpl(this.deviceId);
+class _$OnChangeResourceIdImpl implements OnChangeResourceId {
+  _$OnChangeResourceIdImpl(this.deviceId);
 
   @override
   final String deviceId;
 
   @override
   String toString() {
-    return 'OrderHistoryEvent.onChangeDeviceId(deviceId: $deviceId)';
+    return 'OrderHistoryEvent.onChangeResourceId(deviceId: $deviceId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnChangeDeviceIdImpl &&
+            other is _$OnChangeResourceIdImpl &&
             (identical(other.deviceId, deviceId) ||
                 other.deviceId == deviceId));
   }
@@ -664,8 +664,8 @@ class _$OnChangeDeviceIdImpl implements OnChangeDeviceId {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnChangeDeviceIdImplCopyWith<_$OnChangeDeviceIdImpl> get copyWith =>
-      __$$OnChangeDeviceIdImplCopyWithImpl<_$OnChangeDeviceIdImpl>(
+  _$$OnChangeResourceIdImplCopyWith<_$OnChangeResourceIdImpl> get copyWith =>
+      __$$OnChangeResourceIdImplCopyWithImpl<_$OnChangeResourceIdImpl>(
           this, _$identity);
 
   @override
@@ -675,9 +675,9 @@ class _$OnChangeDeviceIdImpl implements OnChangeDeviceId {
     required TResult Function() setLoading,
     required TResult Function() submitOrderDetails,
     required TResult Function(DateTime orderDate) onChangeOrderDate,
-    required TResult Function(String deviceId) onChangeDeviceId,
+    required TResult Function(String deviceId) onChangeResourceId,
   }) {
-    return onChangeDeviceId(deviceId);
+    return onChangeResourceId(deviceId);
   }
 
   @override
@@ -687,9 +687,9 @@ class _$OnChangeDeviceIdImpl implements OnChangeDeviceId {
     TResult? Function()? setLoading,
     TResult? Function()? submitOrderDetails,
     TResult? Function(DateTime orderDate)? onChangeOrderDate,
-    TResult? Function(String deviceId)? onChangeDeviceId,
+    TResult? Function(String deviceId)? onChangeResourceId,
   }) {
-    return onChangeDeviceId?.call(deviceId);
+    return onChangeResourceId?.call(deviceId);
   }
 
   @override
@@ -699,11 +699,11 @@ class _$OnChangeDeviceIdImpl implements OnChangeDeviceId {
     TResult Function()? setLoading,
     TResult Function()? submitOrderDetails,
     TResult Function(DateTime orderDate)? onChangeOrderDate,
-    TResult Function(String deviceId)? onChangeDeviceId,
+    TResult Function(String deviceId)? onChangeResourceId,
     required TResult orElse(),
   }) {
-    if (onChangeDeviceId != null) {
-      return onChangeDeviceId(deviceId);
+    if (onChangeResourceId != null) {
+      return onChangeResourceId(deviceId);
     }
     return orElse();
   }
@@ -715,9 +715,9 @@ class _$OnChangeDeviceIdImpl implements OnChangeDeviceId {
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitOrderDetails value) submitOrderDetails,
     required TResult Function(OnChangeOrderDate value) onChangeOrderDate,
-    required TResult Function(OnChangeDeviceId value) onChangeDeviceId,
+    required TResult Function(OnChangeResourceId value) onChangeResourceId,
   }) {
-    return onChangeDeviceId(this);
+    return onChangeResourceId(this);
   }
 
   @override
@@ -727,9 +727,9 @@ class _$OnChangeDeviceIdImpl implements OnChangeDeviceId {
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult? Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult? Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult? Function(OnChangeResourceId value)? onChangeResourceId,
   }) {
-    return onChangeDeviceId?.call(this);
+    return onChangeResourceId?.call(this);
   }
 
   @override
@@ -739,22 +739,22 @@ class _$OnChangeDeviceIdImpl implements OnChangeDeviceId {
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitOrderDetails value)? submitOrderDetails,
     TResult Function(OnChangeOrderDate value)? onChangeOrderDate,
-    TResult Function(OnChangeDeviceId value)? onChangeDeviceId,
+    TResult Function(OnChangeResourceId value)? onChangeResourceId,
     required TResult orElse(),
   }) {
-    if (onChangeDeviceId != null) {
-      return onChangeDeviceId(this);
+    if (onChangeResourceId != null) {
+      return onChangeResourceId(this);
     }
     return orElse();
   }
 }
 
-abstract class OnChangeDeviceId implements OrderHistoryEvent {
-  factory OnChangeDeviceId(final String deviceId) = _$OnChangeDeviceIdImpl;
+abstract class OnChangeResourceId implements OrderHistoryEvent {
+  factory OnChangeResourceId(final String deviceId) = _$OnChangeResourceIdImpl;
 
   String get deviceId;
   @JsonKey(ignore: true)
-  _$$OnChangeDeviceIdImplCopyWith<_$OnChangeDeviceIdImpl> get copyWith =>
+  _$$OnChangeResourceIdImplCopyWith<_$OnChangeResourceIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -764,7 +764,8 @@ mixin _$OrderHistoryState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isLoaded => throw _privateConstructorUsedError;
   bool get isSubmitted => throw _privateConstructorUsedError;
-  OrderDataModel get orderData => throw _privateConstructorUsedError;
+  OrderModel? get placeOrderData => throw _privateConstructorUsedError;
+  List<OrderModel>? get orderHistoryList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OrderHistoryStateCopyWith<OrderHistoryState> get copyWith =>
@@ -782,10 +783,10 @@ abstract class $OrderHistoryStateCopyWith<$Res> {
       bool isLoading,
       bool isLoaded,
       bool isSubmitted,
-      OrderDataModel orderData});
+      OrderModel? placeOrderData,
+      List<OrderModel>? orderHistoryList});
 
   $ResponseModelCopyWith<$Res> get submitStatus;
-  $OrderDataModelCopyWith<$Res> get orderData;
 }
 
 /// @nodoc
@@ -805,7 +806,8 @@ class _$OrderHistoryStateCopyWithImpl<$Res, $Val extends OrderHistoryState>
     Object? isLoading = null,
     Object? isLoaded = null,
     Object? isSubmitted = null,
-    Object? orderData = null,
+    Object? placeOrderData = freezed,
+    Object? orderHistoryList = freezed,
   }) {
     return _then(_value.copyWith(
       submitStatus: null == submitStatus
@@ -824,10 +826,14 @@ class _$OrderHistoryStateCopyWithImpl<$Res, $Val extends OrderHistoryState>
           ? _value.isSubmitted
           : isSubmitted // ignore: cast_nullable_to_non_nullable
               as bool,
-      orderData: null == orderData
-          ? _value.orderData
-          : orderData // ignore: cast_nullable_to_non_nullable
-              as OrderDataModel,
+      placeOrderData: freezed == placeOrderData
+          ? _value.placeOrderData
+          : placeOrderData // ignore: cast_nullable_to_non_nullable
+              as OrderModel?,
+      orderHistoryList: freezed == orderHistoryList
+          ? _value.orderHistoryList
+          : orderHistoryList // ignore: cast_nullable_to_non_nullable
+              as List<OrderModel>?,
     ) as $Val);
   }
 
@@ -836,14 +842,6 @@ class _$OrderHistoryStateCopyWithImpl<$Res, $Val extends OrderHistoryState>
   $ResponseModelCopyWith<$Res> get submitStatus {
     return $ResponseModelCopyWith<$Res>(_value.submitStatus, (value) {
       return _then(_value.copyWith(submitStatus: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $OrderDataModelCopyWith<$Res> get orderData {
-    return $OrderDataModelCopyWith<$Res>(_value.orderData, (value) {
-      return _then(_value.copyWith(orderData: value) as $Val);
     });
   }
 }
@@ -861,12 +859,11 @@ abstract class _$$OrderHistoryStateImplCopyWith<$Res>
       bool isLoading,
       bool isLoaded,
       bool isSubmitted,
-      OrderDataModel orderData});
+      OrderModel? placeOrderData,
+      List<OrderModel>? orderHistoryList});
 
   @override
   $ResponseModelCopyWith<$Res> get submitStatus;
-  @override
-  $OrderDataModelCopyWith<$Res> get orderData;
 }
 
 /// @nodoc
@@ -884,7 +881,8 @@ class __$$OrderHistoryStateImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? isLoaded = null,
     Object? isSubmitted = null,
-    Object? orderData = null,
+    Object? placeOrderData = freezed,
+    Object? orderHistoryList = freezed,
   }) {
     return _then(_$OrderHistoryStateImpl(
       submitStatus: null == submitStatus
@@ -903,10 +901,14 @@ class __$$OrderHistoryStateImplCopyWithImpl<$Res>
           ? _value.isSubmitted
           : isSubmitted // ignore: cast_nullable_to_non_nullable
               as bool,
-      orderData: null == orderData
-          ? _value.orderData
-          : orderData // ignore: cast_nullable_to_non_nullable
-              as OrderDataModel,
+      placeOrderData: freezed == placeOrderData
+          ? _value.placeOrderData
+          : placeOrderData // ignore: cast_nullable_to_non_nullable
+              as OrderModel?,
+      orderHistoryList: freezed == orderHistoryList
+          ? _value._orderHistoryList
+          : orderHistoryList // ignore: cast_nullable_to_non_nullable
+              as List<OrderModel>?,
     ));
   }
 }
@@ -919,7 +921,9 @@ class _$OrderHistoryStateImpl implements _OrderHistoryState {
       required this.isLoading,
       required this.isLoaded,
       required this.isSubmitted,
-      required this.orderData});
+      this.placeOrderData,
+      final List<OrderModel>? orderHistoryList})
+      : _orderHistoryList = orderHistoryList;
 
   @override
   final ResponseModel submitStatus;
@@ -930,11 +934,21 @@ class _$OrderHistoryStateImpl implements _OrderHistoryState {
   @override
   final bool isSubmitted;
   @override
-  final OrderDataModel orderData;
+  final OrderModel? placeOrderData;
+  final List<OrderModel>? _orderHistoryList;
+  @override
+  List<OrderModel>? get orderHistoryList {
+    final value = _orderHistoryList;
+    if (value == null) return null;
+    if (_orderHistoryList is EqualUnmodifiableListView)
+      return _orderHistoryList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'OrderHistoryState(submitStatus: $submitStatus, isLoading: $isLoading, isLoaded: $isLoaded, isSubmitted: $isSubmitted, orderData: $orderData)';
+    return 'OrderHistoryState(submitStatus: $submitStatus, isLoading: $isLoading, isLoaded: $isLoaded, isSubmitted: $isSubmitted, placeOrderData: $placeOrderData, orderHistoryList: $orderHistoryList)';
   }
 
   @override
@@ -950,13 +964,21 @@ class _$OrderHistoryStateImpl implements _OrderHistoryState {
                 other.isLoaded == isLoaded) &&
             (identical(other.isSubmitted, isSubmitted) ||
                 other.isSubmitted == isSubmitted) &&
-            (identical(other.orderData, orderData) ||
-                other.orderData == orderData));
+            (identical(other.placeOrderData, placeOrderData) ||
+                other.placeOrderData == placeOrderData) &&
+            const DeepCollectionEquality()
+                .equals(other._orderHistoryList, _orderHistoryList));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, submitStatus, isLoading, isLoaded, isSubmitted, orderData);
+      runtimeType,
+      submitStatus,
+      isLoading,
+      isLoaded,
+      isSubmitted,
+      placeOrderData,
+      const DeepCollectionEquality().hash(_orderHistoryList));
 
   @JsonKey(ignore: true)
   @override
@@ -972,7 +994,8 @@ abstract class _OrderHistoryState implements OrderHistoryState {
       required final bool isLoading,
       required final bool isLoaded,
       required final bool isSubmitted,
-      required final OrderDataModel orderData}) = _$OrderHistoryStateImpl;
+      final OrderModel? placeOrderData,
+      final List<OrderModel>? orderHistoryList}) = _$OrderHistoryStateImpl;
 
   @override
   ResponseModel get submitStatus;
@@ -983,7 +1006,9 @@ abstract class _OrderHistoryState implements OrderHistoryState {
   @override
   bool get isSubmitted;
   @override
-  OrderDataModel get orderData;
+  OrderModel? get placeOrderData;
+  @override
+  List<OrderModel>? get orderHistoryList;
   @override
   @JsonKey(ignore: true)
   _$$OrderHistoryStateImplCopyWith<_$OrderHistoryStateImpl> get copyWith =>

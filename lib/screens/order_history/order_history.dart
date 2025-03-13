@@ -1,70 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ldms_mobile_app/0-services/0-core/debouncer.dart';
-import 'package:ldms_mobile_app/0-services/0-core/utility_services.dart';
 import 'package:ldms_mobile_app/constants/app_colors.dart';
 import 'package:ldms_mobile_app/constants/device_type.dart';
 import 'package:ldms_mobile_app/constants/place_types.dart';
 import 'package:ldms_mobile_app/custom_widgets/custom_text.dart';
 import 'package:ldms_mobile_app/custom_widgets/custom_button.dart';
-import 'package:ldms_mobile_app/custom_widgets/heading_subheading_widget.dart';
 import 'package:ldms_mobile_app/custom_widgets/heading_with_icon.dart';
-import 'package:ldms_mobile_app/custom_widgets/profile_picture_widget.dart';
-import 'package:ldms_mobile_app/custom_widgets/profile_picture_widget.dart';
 import 'package:ldms_mobile_app/custom_widgets/custom_icon_button.dart';
 import 'package:ldms_mobile_app/custom_widgets/tab_menu_card.dart';
 import 'package:ldms_mobile_app/screens/home/bloc/home_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ldms_mobile_app/screens/order_history/bloc/order_history_bloc.dart';
+import 'package:ldms_mobile_app/screens/order_history/widgets/order_history_card.dart';
 
 class OrderHistory extends StatelessWidget {
+  const OrderHistory({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => OrderHistoryBloc()..add(const OrderHistoryEvent.started()),
+      child: OrderHistoryChild(),
+    );
+  }
+}
+
+class OrderHistoryChild extends StatelessWidget {
   void onPressed() {
     print('Icon pressed');
   }
-
-  final List<Map<String, dynamic>> devices = [
-    {
-      "title": "Device 1",
-      "status": "Healthy",
-      "percentage": 78,
-    },
-    {
-      "title": "Device 2",
-      "status": "Warning",
-      "percentage": 50,
-    },
-    {
-      "title": "Device 3",
-      "status": "Critical",
-      "percentage": 15,
-    },
-    {
-      "title": "Device 4",
-      "status": "Warning",
-      "percentage": 50,
-    },
-    {
-      "title": "Device 5",
-      "status": "Healthy",
-      "percentage": 78,
-    },
-    {
-      "title": "Device 6",
-      "status": "Warning",
-      "percentage": 50,
-    },
-    {
-      "title": "Device 7",
-      "status": "Critical",
-      "percentage": 15,
-    },
-    {
-      "title": "Device 8",
-      "status": "Warning",
-      "percentage": 50,
-    }
-  ];
 
   final List<Map<String, dynamic>> orders = [
     {
@@ -114,21 +78,17 @@ class OrderHistory extends StatelessWidget {
     },
   ];
 
+  OrderHistoryChild({super.key});
+
   @override
   Widget build(BuildContext context) {
-    const userProfilePicture = "";
-    final searchController = TextEditingController();
-    final searchDebouncer = Debouncer(milliseconds: 500);
-    int indexNumber = 0;
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffEDF1FB),
+        backgroundColor: const Color(0xffEDF1FB),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-                child: Row(
+            const Row(
               children: [
                 HeadingWithIconWidget(
                   heading: "Order History",
@@ -136,7 +96,7 @@ class OrderHistory extends StatelessWidget {
                 ),
                 SizedBox(width: 12.0),
               ],
-            )),
+            ),
             CustomIconButton(
               onButtonPressed: () => _showCustomDialog(context), // Use a lambda to delay calling the function
               iconPath: 'assets/icons/plus.svg',
@@ -149,52 +109,60 @@ class OrderHistory extends StatelessWidget {
         create: (context) => HomeBloc(),
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
-            return Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                children: [
-                  TabBarSection(state: state),
-                  // Text(
-                  //   "hai",
-                  //   style: TextStyle(color: Color(0xFF23AC34), fontSize: 24),
-                  // ),
-                  // SizedBox(height: 20),
-                  Expanded(
-                    child: GridView.builder(
-                      itemCount: orders.length, // Number of device cards
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
-                        childAspectRatio: 3.0,
+            return BlocConsumer<OrderHistoryBloc, OrderHistoryState>(
+              listener: (context, orderState) {
+                // if (orderState.isSubmitted) {
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       backgroundColor: Colors.red,
+                //       content: Text(
+                //         'Order submitted successfully!',
+                //         style: TextStyle(color: Colors.black),
+                //       ),
+                //       duration: Duration(seconds: 3),
+                //     ),
+                //   );
+                // }
+              },
+              builder: (orderContext, orderState) {
+                return Builder(
+                  builder: (context) {
+                    return Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        children: [
+                          TabBarSection(state: state),
+                          Expanded(
+                            child: GridView.builder(
+                              itemCount: orderState.orderHistoryList!.length, // Number of device cards
+                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 1,
+                                childAspectRatio: 3.0,
+                              ),
+                              itemBuilder: (context, index) {
+                                final order = orderState.orderHistoryList![index];
+                                return OrderHistoryCard(
+                                  index: index,
+                                  resourceType: order.resourceType!,
+                                  // deviceType: order["deviceType"],
+                                  orderStatusId: order.orderStatus!,
+                                  orderStatusName: order.orderStatus!,
+                                  orderDate: order.customerChosenTime!.toString(),
+                                  // orderDate: order["orderDate"]
+                                );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      itemBuilder: (context, index) {
-                        final order = orders[index];
-                        // Assign color based on index pattern
-
-                        return OrderHistoryCard(
-                            index: index,
-                            deviceName: order["deviceName"],
-                            deviceTypeId: order["deviceTypeId"],
-                            deviceType: order["deviceType"],
-                            orderStatusId: order["orderStatusId"],
-                            orderStatusName: order["orderStatusName"],
-                            orderDate: order["orderDate"]);
-                      },
-                    ),
-                  ),
-                ],
-              ),
+                    );
+                  },
+                );
+              },
             );
           },
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () => _showCustomDialog(context),
-      //   child: Icon(
-      //     Icons.add,
-      //     color: Colors.white,
-      //   ),
-      //   backgroundColor: Colors.blueGrey[900],
-      // ),
     );
   }
 }
@@ -214,7 +182,7 @@ class TabBarSection extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 15),
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 30,
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -241,165 +209,30 @@ class TabBarSection extends StatelessWidget {
   }
 }
 
-class OrderHistoryCard extends StatelessWidget {
-  final int index;
-  final String deviceName;
-  final String deviceTypeId;
-  final String deviceType;
-  final String orderStatusId;
-  final String orderStatusName;
-  final String orderDate;
-
-  OrderHistoryCard({
-    required this.index,
-    required this.deviceName,
-    required this.deviceTypeId,
-    required this.deviceType,
-    required this.orderStatusId,
-    required this.orderStatusName,
-    required this.orderDate,
-  });
-  void onPressed() {
-    print('Icon pressed');
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // Set status color based on status ID
-    Color statusColor;
-    String statusIcon;
-    switch (orderStatusId) {
-      case "1":
-        statusColor = AppColors.PendingColor;
-        statusIcon = "assets/icons/clock.svg";
-        break;
-      case "2":
-        statusColor = AppColors.orderConfirmColor;
-        statusIcon = "assets/icons/tick.svg";
-
-        break;
-      case "3":
-        statusColor = AppColors.canceledColor;
-        statusIcon = "assets/icons/close.svg";
-
-        break;
-      case "4":
-        statusColor = AppColors.outOfDeliveryColor;
-        statusIcon = "assets/icons/tick.svg";
-
-        break;
-      default:
-        statusColor = Colors.grey;
-        statusIcon = "";
-    }
-
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.white, Colors.white],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Order ${index + 1}", style: TextStyle(color: Colors.black)),
-                  Container(
-                      padding: EdgeInsets.symmetric(vertical: 3, horizontal: 18),
-                      decoration: BoxDecoration(
-                        color: statusColor.withOpacity(0.1), // Background color
-                        borderRadius: BorderRadius.circular(18), // Rounded corners
-                        // border: Border.all(
-                        //   color: statusColor,
-                        //   width: 1, // Border width
-                        // ),
-                      ),
-                      child: Text(orderStatusName,
-                          style: TextStyle(color: statusColor, fontSize: 12, fontWeight: FontWeight.w400))),
-                ],
-              ),
-              Divider(
-                color: Colors.grey, // Line color
-                thickness: 0.5, // Line thickness
-                indent: 0, // Left spacing
-                endIndent: 0, // Right spacing
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    child: Row(
-                      children: [
-                        CustomIconButton(
-                          onButtonPressed: onPressed,
-                          iconPath: statusIcon,
-                          backgroundColor: statusColor,
-                          iconColor: statusColor,
-                        ),
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(deviceName, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
-                            Text("$deviceType", style: TextStyle(color: Colors.black)),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(orderDate, style: TextStyle(color: Colors.black)),
-                      Text("$orderDate", style: TextStyle(color: Colors.black)),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 void _showCustomDialog(BuildContext context) {
   showDialog(
     context: context,
     barrierDismissible: false, // Prevents closing by tapping outside
     builder: (context) {
-      // Get device width and height
       double screenWidth = MediaQuery.of(context).size.width;
-      double screenHeight = MediaQuery.of(context).size.height;
-
-      final _formKey = GlobalKey<FormState>();
-      String? _category;
-      TimeOfDay? _reminderTime;
-      String? _newCategory;
-      final List<String> _categories = ['Personal', 'Work', 'Other'];
-
+      final formKey = GlobalKey<FormState>();
       return BlocProvider(
         create: (context) => OrderHistoryBloc(),
-        child: BlocBuilder<OrderHistoryBloc, OrderHistoryState>(
+        child: BlocConsumer<OrderHistoryBloc, OrderHistoryState>(
+          listener: (mainContext, state) {
+            if (state.isSubmitted) {
+              Navigator.pop(context); // Close the dialog
+              // ScaffoldMessenger.of(context).showSnackBar(
+              //   SnackBar(
+              //     content: Text('Order submitted successfully!'),
+              //     duration: Duration(seconds: 3),
+              //   ),
+              // );
+            }
+          },
           builder: (mainContext, state) {
             return Dialog(
-              insetPadding: EdgeInsets.all(10),
+              insetPadding: const EdgeInsets.all(10),
               child: SingleChildScrollView(
                 child: Container(
                   decoration: BoxDecoration(
@@ -408,7 +241,7 @@ void _showCustomDialog(BuildContext context) {
                   ),
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
                   child: Form(
-                    key: _formKey,
+                    key: formKey,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -432,11 +265,11 @@ void _showCustomDialog(BuildContext context) {
                                   borderSide: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(8.0))),
                               contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                             ),
-                            value: state.orderData.deviceId,
+                            value: state.placeOrderData!.id,
                             dropdownColor: AppColors.textFieldFillColor,
                             iconEnabledColor: AppColors.textFieldBorderColor,
                             onChanged: (newValue) {
-                              mainContext.read<OrderHistoryBloc>().add(OrderHistoryEvent.onChangeDeviceId(newValue!));
+                              mainContext.read<OrderHistoryBloc>().add(OrderHistoryEvent.onChangeResourceId(newValue!));
                             },
                             items: DeviceType.deviceTypeList.map<DropdownMenuItem<String>>((device) {
                               return DropdownMenuItem<String>(
@@ -459,74 +292,70 @@ void _showCustomDialog(BuildContext context) {
                           ),
                         ),
 
-                        SizedBox(
-                          height: 36,
-                        ),
+                        const SizedBox(height: 36),
 
                         // DATE  START/////////////////////////////////////////////
 
                         CupertinoButton(
-                            padding: const EdgeInsets.all(0),
-                            onPressed: () {
-                              showModalBottomSheet<void>(
-                                  context: mainContext,
-                                  builder: (BuildContext context) {
-                                    return Container(
-                                      height: 260,
-                                      color: AppColors.textFieldBorderColor,
-                                      child: CupertinoTheme(
-                                        data: const CupertinoThemeData(
-                                          textTheme: CupertinoTextThemeData(
-                                            dateTimePickerTextStyle:
-                                                TextStyle(fontSize: 24, color: AppColors.textFieldFontColor),
-                                          ),
-                                        ),
-                                        child: CupertinoDatePicker(
-                                          initialDateTime: state.orderData.orderDate,
-                                          mode: CupertinoDatePickerMode.dateAndTime,
-                                          use24hFormat: false,
-                                          showDayOfWeek: true,
-                                          onDateTimeChanged: (DateTime newDate) {
-                                            mainContext
-                                                .read<OrderHistoryBloc>()
-                                                .add(OrderHistoryEvent.onChangeOrderDate(newDate));
-                                          },
-                                        ),
+                          padding: const EdgeInsets.all(0),
+                          onPressed: () {
+                            showModalBottomSheet<void>(
+                              context: mainContext,
+                              builder: (BuildContext context) {
+                                return Container(
+                                  height: 260,
+                                  color: AppColors.textFieldBorderColor,
+                                  child: CupertinoTheme(
+                                    data: const CupertinoThemeData(
+                                      textTheme: CupertinoTextThemeData(
+                                        dateTimePickerTextStyle:
+                                            TextStyle(fontSize: 24, color: AppColors.textFieldFontColor),
                                       ),
-                                    );
-                                  });
-                            },
-                            child: Container(
-                              height: 60.0,
-                              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: AppColors.textFieldBorderColor //                   <--- border color
-                                      // width: 5.0,
-                                      ),
-                                  borderRadius: BorderRadius.circular(5.5),
-                                  color: AppColors.textFieldFillColor),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  const Icon(
-                                    Icons.calendar_month_rounded,
-                                    color: AppColors.textFieldFontColor,
-                                    // size: 24.0,
+                                    ),
+                                    child: CupertinoDatePicker(
+                                      initialDateTime: state.placeOrderData!.customerChosenTime,
+                                      mode: CupertinoDatePickerMode.dateAndTime,
+                                      use24hFormat: false,
+                                      onDateTimeChanged: (DateTime newDate) {
+                                        mainContext
+                                            .read<OrderHistoryBloc>()
+                                            .add(OrderHistoryEvent.onChangeOrderDate(newDate));
+                                      },
+                                    ),
                                   ),
-                                  const SizedBox(width: 12),
-                                  CustomText(
-                                    text:
-                                        '${state.orderData.orderDate?.day}/${state.orderData.orderDate?.month}/${state.orderData.orderDate?.year} ${state.orderData.orderDate?.hour}:${state.orderData.orderDate?.minute}',
-                                    color: AppColors.textFieldFontColor,
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ],
-                              ),
-                            )),
-                        SizedBox(
+                                );
+                              },
+                            );
+                          },
+                          child: Container(
+                            height: 60.0,
+                            padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: AppColors.textFieldBorderColor),
+                              borderRadius: BorderRadius.circular(5.5),
+                              color: AppColors.textFieldFillColor,
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const Icon(
+                                  Icons.calendar_month_rounded,
+                                  color: AppColors.textFieldFontColor,
+                                ),
+                                const SizedBox(width: 12),
+                                CustomText(
+                                  text:
+                                      '${state.placeOrderData!.customerChosenTime?.day}/${state.placeOrderData!.customerChosenTime?.month}/${state.placeOrderData!.customerChosenTime?.year} ${state.placeOrderData!.customerChosenTime?.hour}:${state.placeOrderData!.customerChosenTime?.minute}',
+                                  color: AppColors.textFieldFontColor,
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
                           height: 24,
                         ),
                         Row(
@@ -565,35 +394,10 @@ void _showCustomDialog(BuildContext context) {
                             ),
                           ],
                         ),
-                        // SizedBox(
-                        //   width: double.infinity,
-                        //   child: ElevatedButton(
-                        //     onPressed: () {
-                        //       if (_formKey.currentState!.validate()) {
-                        //         if (_category == 'Other' &&
-                        //             _newCategory != null &&
-                        //             _newCategory!.isNotEmpty) {
-                        //           _categories.add(_newCategory!);
-                        //           _category = _newCategory;
-                        //         }
-                        //         Navigator.of(context).pop();
-                        //       }
-                        //     },
-                        //     style: ButtonStyle(
-                        //       backgroundColor:
-                        //           const WidgetStatePropertyAll(TColors.appPrimaryColor),
-                        //       shape: WidgetStatePropertyAll(
-                        //         RoundedRectangleBorder(
-                        //           borderRadius: BorderRadius.circular(4),
-                        //         ),
-                        //       ),
-                        //     ),
-                        //     child: const Text(
-                        //       'Save',
-                        //       style: TextStyle(color: Colors.black),
-                        //     ),
-                        //   ),
-                        // ),
+                        if (state.isSubmitted)
+                          const Center(
+                            child: CircularProgressIndicator(),
+                          ),
                       ],
                     ),
                   ),
@@ -606,30 +410,3 @@ void _showCustomDialog(BuildContext context) {
     },
   );
 }
-
-
-         // Row(
-          //   children: [
-          //     ElevatedButton(
-          //       style: ElevatedButton.styleFrom(
-          //         minimumSize: Size.fromHeight(52),
-          //         backgroundColor: Colors.amber,
-          //         shape: RoundedRectangleBorder(
-          //           borderRadius: BorderRadius.circular(50), // Border radius
-          //         ),
-          //       ),
-          //       onPressed: () {},
-          //       child: Text("inputText",
-          //           style: TextStyle(
-          //             color: Colors.black,
-          //             fontSize: 18,
-          //           )),
-          //     )
-          //     // CustomButton(
-          //     //     inputText: "Submit",
-          //     //     backgroundColor: AppColors.customButtonColor,
-          //     //     fontColor: AppColors.customButtonFontColor,
-          //     //     onButtonPressed: () {},
-          //     //     borderRadius: 12),
-          //   ],
-          // )

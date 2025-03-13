@@ -7,7 +7,8 @@ class OrderHistoryState with _$OrderHistoryState {
     required bool isLoading,
     required bool isLoaded,
     required bool isSubmitted,
-    required OrderDataModel orderData,
+    OrderModel? placeOrderData,
+    List<OrderModel>? orderHistoryList,
   }) = _OrderHistoryState;
 
   factory OrderHistoryState.initial() {
@@ -16,7 +17,8 @@ class OrderHistoryState with _$OrderHistoryState {
       isLoading: false,
       isLoaded: false,
       isSubmitted: false,
-      orderData: OrderDataModel(),
+      placeOrderData: OrderModel(),
+      orderHistoryList: [],
     );
   }
 }

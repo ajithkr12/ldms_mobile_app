@@ -34,8 +34,8 @@ class _MainScreenState extends State<MainScreen> {
             },
             children: <Widget>[
               Home(),
-              AddDevices(),
-              OrderHistory(),
+              const AddDevices(),
+              const OrderHistory(),
               Settings(),
             ],
           ),
@@ -83,11 +83,8 @@ class _MainScreenState extends State<MainScreen> {
                 currentIndex: index,
                 showSelectedLabels: false,
                 showUnselectedLabels: false,
-                selectedIconTheme: IconThemeData(
-                  opacity: 3,
-                  size: 28,
-                ), // Ensures no extra highlight
-                unselectedIconTheme: IconThemeData(size: 24),
+                selectedIconTheme: const IconThemeData(opacity: 3, size: 28), // Ensures no extra highlight
+                unselectedIconTheme: const IconThemeData(size: 24),
                 selectedItemColor: AppColors.bottomAppBarIconActiveColor,
                 unselectedItemColor: AppColors.bottomAppBarIconNormalColor,
                 onTap: (index) {
@@ -102,9 +99,7 @@ class _MainScreenState extends State<MainScreen> {
                           'assets/icons/home.svg',
                           width: 24,
                           height: 24,
-                          colorFilter: const ColorFilter.mode(
-                              AppColors.bottomAppBarIconNormalColor,
-                              BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(AppColors.bottomAppBarIconNormalColor, BlendMode.srcIn),
                         ),
                       ),
                       activeIcon: Align(
@@ -113,9 +108,7 @@ class _MainScreenState extends State<MainScreen> {
                           alignment: Alignment.center,
                           width: 24,
                           height: 24,
-                          colorFilter: const ColorFilter.mode(
-                              AppColors.bottomAppBarIconActiveColor,
-                              BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(AppColors.bottomAppBarIconActiveColor, BlendMode.srcIn),
                         ),
                       ),
                       label: "Home"),
@@ -124,17 +117,13 @@ class _MainScreenState extends State<MainScreen> {
                       'assets/icons/devices-plus.svg',
                       width: 24,
                       height: 24,
-                      colorFilter: const ColorFilter.mode(
-                          AppColors.bottomAppBarIconNormalColor,
-                          BlendMode.srcIn),
+                      colorFilter: const ColorFilter.mode(AppColors.bottomAppBarIconNormalColor, BlendMode.srcIn),
                     ),
                     activeIcon: SvgPicture.asset(
                       'assets/icons/devices-plus-active.svg',
                       width: 24,
                       height: 24,
-                      colorFilter: const ColorFilter.mode(
-                          AppColors.bottomAppBarIconActiveColor,
-                          BlendMode.srcIn),
+                      colorFilter: const ColorFilter.mode(AppColors.bottomAppBarIconActiveColor, BlendMode.srcIn),
                     ),
                     label: 'Add',
                   ),
@@ -143,17 +132,13 @@ class _MainScreenState extends State<MainScreen> {
                       'assets/icons/cart.svg',
                       width: 24,
                       height: 24,
-                      colorFilter: const ColorFilter.mode(
-                          AppColors.bottomAppBarIconNormalColor,
-                          BlendMode.srcIn),
+                      colorFilter: const ColorFilter.mode(AppColors.bottomAppBarIconNormalColor, BlendMode.srcIn),
                     ),
                     activeIcon: SvgPicture.asset(
                       'assets/icons/cart-active.svg',
                       width: 24,
                       height: 24,
-                      colorFilter: const ColorFilter.mode(
-                          AppColors.bottomAppBarIconActiveColor,
-                          BlendMode.srcIn),
+                      colorFilter: const ColorFilter.mode(AppColors.bottomAppBarIconActiveColor, BlendMode.srcIn),
                     ),
                     label: 'Cart',
                   ),
@@ -162,17 +147,13 @@ class _MainScreenState extends State<MainScreen> {
                       'assets/icons/settings.svg',
                       width: 24,
                       height: 24,
-                      colorFilter: const ColorFilter.mode(
-                          AppColors.bottomAppBarIconNormalColor,
-                          BlendMode.srcIn),
+                      colorFilter: const ColorFilter.mode(AppColors.bottomAppBarIconNormalColor, BlendMode.srcIn),
                     ),
                     activeIcon: SvgPicture.asset(
                       'assets/icons/settings-active.svg',
                       width: 24,
                       height: 24,
-                      colorFilter: const ColorFilter.mode(
-                          AppColors.bottomAppBarIconActiveColor,
-                          BlendMode.srcIn),
+                      colorFilter: const ColorFilter.mode(AppColors.bottomAppBarIconActiveColor, BlendMode.srcIn),
                     ),
                     label: 'Settings',
                   ),
@@ -207,9 +188,7 @@ class HomePage extends StatelessWidget {
               children: [
                 ProfilePictureWidget(profilePictureUrl: userProfilePicture),
                 SizedBox(width: 12.0),
-                HeadingSubheadingWidget(
-                    heading: "Hello, Jakob Bergson",
-                    subHeading: 'Administrator'),
+                HeadingSubheadingWidget(heading: "Hello, Jakob Bergson", subHeading: 'Administrator'),
               ],
             )),
             // CustomIconButton(

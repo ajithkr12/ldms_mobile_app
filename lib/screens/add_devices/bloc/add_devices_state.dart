@@ -10,6 +10,7 @@ class AddDevicesState with _$AddDevicesState {
     required bool isLoaded,
     required bool isSubmitted,
     required DeviceDataModel deviceData,
+    List<UserRegisteredDevice>? deviceList,
   }) = _AddDevicesState;
 
   factory AddDevicesState.initial() {
@@ -21,6 +22,7 @@ class AddDevicesState with _$AddDevicesState {
       isLoaded: false,
       isSubmitted: false,
       deviceData: DeviceDataModel(),
+      deviceList: [],
     );
   }
 }

@@ -26,57 +26,56 @@ class OrderHistory extends StatelessWidget {
 }
 
 class OrderHistoryChild extends StatelessWidget {
-  void onPressed() {
-    print('Icon pressed');
-  }
-
-  final List<Map<String, dynamic>> orders = [
-    {
-      "orderId": "123",
-      "deviceName": "Device 1",
-      "deviceTypeId": "0",
-      "deviceType": "Water",
-      "orderStatusId": "1",
-      "orderStatusName": "Pending",
-      "orderDate": "01/01/2025 10:30AM"
-    },
-    {
-      "orderId": "125",
-      "deviceName": "Device 4",
-      "deviceTypeId": "1",
-      "deviceType": "lpg",
-      "orderStatusId": "2",
-      "orderStatusName": "Order Confirm",
-      "orderDate": "01/01/2025 10:30AM"
-    },
-    {
-      "orderId": "129",
-      "deviceName": "Device 8",
-      "deviceTypeId": "1",
-      "deviceType": "lpg",
-      "orderStatusId": "3",
-      "orderStatusName": "Canceled",
-      "orderDate": "01/01/2025 10:30AM"
-    },
-    {
-      "orderId": "130",
-      "deviceName": "Device 2",
-      "deviceTypeId": "0",
-      "deviceType": "Water",
-      "orderStatusId": "4",
-      "orderStatusName": "Out For Delivery",
-      "orderDate": "01/01/2025 10:30AM"
-    },
-    {
-      "orderId": "150",
-      "deviceName": "Device 3",
-      "deviceTypeId": "0",
-      "deviceType": "Water",
-      "orderStatusId": "4",
-      "orderStatusName": "Out For Delivery",
-      "orderDate": "01/01/2025 10:30AM"
-    },
-  ];
+  // void onPressed() {
+  //   print('Icon pressed');
+  // }
+  // final List<Map<String, dynamic>> orders = [
+  //   {
+  //     "orderId": "123",
+  //     "deviceName": "Device 1",
+  //     "deviceTypeId": "0",
+  //     "deviceType": "Water",
+  //     "orderStatusId": "1",
+  //     "orderStatusName": "Pending",
+  //     "orderDate": "01/01/2025 10:30AM"
+  //   },
+  //   {
+  //     "orderId": "125",
+  //     "deviceName": "Device 4",
+  //     "deviceTypeId": "1",
+  //     "deviceType": "lpg",
+  //     "orderStatusId": "2",
+  //     "orderStatusName": "Order Confirm",
+  //     "orderDate": "01/01/2025 10:30AM"
+  //   },
+  //   {
+  //     "orderId": "129",
+  //     "deviceName": "Device 8",
+  //     "deviceTypeId": "1",
+  //     "deviceType": "lpg",
+  //     "orderStatusId": "3",
+  //     "orderStatusName": "Canceled",
+  //     "orderDate": "01/01/2025 10:30AM"
+  //   },
+  //   {
+  //     "orderId": "130",
+  //     "deviceName": "Device 2",
+  //     "deviceTypeId": "0",
+  //     "deviceType": "Water",
+  //     "orderStatusId": "4",
+  //     "orderStatusName": "Out For Delivery",
+  //     "orderDate": "01/01/2025 10:30AM"
+  //   },
+  //   {
+  //     "orderId": "150",
+  //     "deviceName": "Device 3",
+  //     "deviceTypeId": "0",
+  //     "deviceType": "Water",
+  //     "orderStatusId": "4",
+  //     "orderStatusName": "Out For Delivery",
+  //     "orderDate": "01/01/2025 10:30AM"
+  //   },
+  // ];
 
   OrderHistoryChild({super.key});
 

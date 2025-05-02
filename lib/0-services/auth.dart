@@ -8,7 +8,7 @@ class AuthService {
   static Future<CustomerModel?> signInWithGoogleServer(String idToken) async {
     try {
       final response = await http.post(
-        Uri.parse('${ConstantUrls.baseServerUrl}auth/google'),
+        Uri.parse('${ConstantUrls.mobilebaseServerUrl}auth/google'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'token': idToken}),
       );
@@ -40,7 +40,7 @@ class AuthService {
     try {
       final token = await TokenStorageService.getToken();
       final response = await http.get(
-        Uri.parse('${ConstantUrls.baseServerUrl}customers/getByToken'),
+        Uri.parse('${ConstantUrls.mobilebaseServerUrl}customers/getByToken'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
@@ -64,10 +64,10 @@ class AuthService {
 
   static Future<CustomerModel?> createCustomer(String name, String address, String location) async {
     try {
-      print('${ConstantUrls.baseServerUrl}customers/create');
+      print('${ConstantUrls.mobilebaseServerUrl}customers/create');
       final token = await TokenStorageService.getToken();
       final response = await http.post(
-        Uri.parse('${ConstantUrls.baseServerUrl}customers/create'),
+        Uri.parse('${ConstantUrls.mobilebaseServerUrl}customers/create'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',

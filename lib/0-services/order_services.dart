@@ -9,7 +9,7 @@ class OrderServices {
     try {
       final token = await TokenStorageService.getToken();
       final response = await http.post(
-        Uri.parse('${ConstantUrls.baseServerUrl}orders/place'),
+        Uri.parse('${ConstantUrls.mobilebaseServerUrl}orders/place'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
@@ -36,7 +36,7 @@ class OrderServices {
     try {
       final token = await TokenStorageService.getToken();
       final response = await http.get(
-        Uri.parse('${ConstantUrls.baseServerUrl}orders/getOrdersByCustomerId'),
+        Uri.parse('${ConstantUrls.mobilebaseServerUrl}orders/getOrdersByCustomerId'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
@@ -48,7 +48,7 @@ class OrderServices {
         if (responseBody == null) {
           return null;
         }
-        return OrderModel.fromJsonList(responseBody);
+        return OrderModel.fromJsonList(responseBody["orders"]);
       }
       print('Failed ${response.statusCode} , body : ${response.body} ');
       return null;
@@ -62,7 +62,7 @@ class OrderServices {
     try {
       final token = await TokenStorageService.getToken();
       final response = await http.get(
-        Uri.parse('${ConstantUrls.baseServerUrl}orders/status?status=$status&date=$date'),
+        Uri.parse('${ConstantUrls.mobilebaseServerUrl}orders/status?status=$status&date=$date'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
@@ -85,7 +85,7 @@ class OrderServices {
   //   try {
   //     final token = await TokenStorageService.getToken();
   //     final response = await http.get(
-  //       Uri.parse('${ConstantUrls.baseServerUrl}orders/customer/$customerId'),
+  //       Uri.parse('${ConstantUrls.mobilebaseServerUrl}orders/customer/$customerId'),
   //       headers: {
   //         'Content-Type': 'application/json',
   //         'Authorization': 'Bearer $token',
@@ -108,7 +108,7 @@ class OrderServices {
     try {
       final token = await TokenStorageService.getToken();
       final response = await http.put(
-        Uri.parse('${ConstantUrls.baseServerUrl}orders/$id/status'),
+        Uri.parse('${ConstantUrls.mobilebaseServerUrl}orders/$id/status'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',

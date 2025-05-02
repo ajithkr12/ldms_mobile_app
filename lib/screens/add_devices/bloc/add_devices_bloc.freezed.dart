@@ -22,7 +22,6 @@ mixin _$AddDevicesEvent {
     required TResult Function(int id) selectTab,
     required TResult Function() setLoading,
     required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
     required TResult Function(String serialNumber) onChangeSerialNumber,
     required TResult Function(String deviceName) onChangeDeviceName,
     required TResult Function(String deviceType) onChangeDeviceType,
@@ -34,7 +33,6 @@ mixin _$AddDevicesEvent {
     TResult? Function(int id)? selectTab,
     TResult? Function()? setLoading,
     TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
     TResult? Function(String serialNumber)? onChangeSerialNumber,
     TResult? Function(String deviceName)? onChangeDeviceName,
     TResult? Function(String deviceType)? onChangeDeviceType,
@@ -46,7 +44,6 @@ mixin _$AddDevicesEvent {
     TResult Function(int id)? selectTab,
     TResult Function()? setLoading,
     TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
     TResult Function(String serialNumber)? onChangeSerialNumber,
     TResult Function(String deviceName)? onChangeDeviceName,
     TResult Function(String deviceType)? onChangeDeviceType,
@@ -55,12 +52,10 @@ mixin _$AddDevicesEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
     required TResult Function(SelectTab value) selectTab,
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
     required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
     required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
     required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
@@ -68,11 +63,10 @@ mixin _$AddDevicesEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
     TResult? Function(SelectTab value)? selectTab,
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -80,11 +74,10 @@ mixin _$AddDevicesEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
     TResult Function(SelectTab value)? selectTab,
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -129,7 +122,7 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
+class _$StartedImpl implements Started {
   const _$StartedImpl();
 
   @override
@@ -153,7 +146,6 @@ class _$StartedImpl implements _Started {
     required TResult Function(int id) selectTab,
     required TResult Function() setLoading,
     required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
     required TResult Function(String serialNumber) onChangeSerialNumber,
     required TResult Function(String deviceName) onChangeDeviceName,
     required TResult Function(String deviceType) onChangeDeviceType,
@@ -168,7 +160,6 @@ class _$StartedImpl implements _Started {
     TResult? Function(int id)? selectTab,
     TResult? Function()? setLoading,
     TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
     TResult? Function(String serialNumber)? onChangeSerialNumber,
     TResult? Function(String deviceName)? onChangeDeviceName,
     TResult? Function(String deviceType)? onChangeDeviceType,
@@ -183,7 +174,6 @@ class _$StartedImpl implements _Started {
     TResult Function(int id)? selectTab,
     TResult Function()? setLoading,
     TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
     TResult Function(String serialNumber)? onChangeSerialNumber,
     TResult Function(String deviceName)? onChangeDeviceName,
     TResult Function(String deviceType)? onChangeDeviceType,
@@ -198,12 +188,10 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
     required TResult Function(SelectTab value) selectTab,
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
     required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
     required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
     required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
@@ -214,11 +202,10 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
     TResult? Function(SelectTab value)? selectTab,
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -229,11 +216,10 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
     TResult Function(SelectTab value)? selectTab,
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -246,8 +232,8 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements AddDevicesEvent {
-  const factory _Started() = _$StartedImpl;
+abstract class Started implements AddDevicesEvent {
+  const factory Started() = _$StartedImpl;
 }
 
 /// @nodoc
@@ -318,7 +304,6 @@ class _$SelectTabImpl implements SelectTab {
     required TResult Function(int id) selectTab,
     required TResult Function() setLoading,
     required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
     required TResult Function(String serialNumber) onChangeSerialNumber,
     required TResult Function(String deviceName) onChangeDeviceName,
     required TResult Function(String deviceType) onChangeDeviceType,
@@ -333,7 +318,6 @@ class _$SelectTabImpl implements SelectTab {
     TResult? Function(int id)? selectTab,
     TResult? Function()? setLoading,
     TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
     TResult? Function(String serialNumber)? onChangeSerialNumber,
     TResult? Function(String deviceName)? onChangeDeviceName,
     TResult? Function(String deviceType)? onChangeDeviceType,
@@ -348,7 +332,6 @@ class _$SelectTabImpl implements SelectTab {
     TResult Function(int id)? selectTab,
     TResult Function()? setLoading,
     TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
     TResult Function(String serialNumber)? onChangeSerialNumber,
     TResult Function(String deviceName)? onChangeDeviceName,
     TResult Function(String deviceType)? onChangeDeviceType,
@@ -363,12 +346,10 @@ class _$SelectTabImpl implements SelectTab {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
     required TResult Function(SelectTab value) selectTab,
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
     required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
     required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
     required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
@@ -379,11 +360,10 @@ class _$SelectTabImpl implements SelectTab {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
     TResult? Function(SelectTab value)? selectTab,
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -394,11 +374,10 @@ class _$SelectTabImpl implements SelectTab {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
     TResult Function(SelectTab value)? selectTab,
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -462,7 +441,6 @@ class _$SetLoadingImpl implements SetLoading {
     required TResult Function(int id) selectTab,
     required TResult Function() setLoading,
     required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
     required TResult Function(String serialNumber) onChangeSerialNumber,
     required TResult Function(String deviceName) onChangeDeviceName,
     required TResult Function(String deviceType) onChangeDeviceType,
@@ -477,7 +455,6 @@ class _$SetLoadingImpl implements SetLoading {
     TResult? Function(int id)? selectTab,
     TResult? Function()? setLoading,
     TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
     TResult? Function(String serialNumber)? onChangeSerialNumber,
     TResult? Function(String deviceName)? onChangeDeviceName,
     TResult? Function(String deviceType)? onChangeDeviceType,
@@ -492,7 +469,6 @@ class _$SetLoadingImpl implements SetLoading {
     TResult Function(int id)? selectTab,
     TResult Function()? setLoading,
     TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
     TResult Function(String serialNumber)? onChangeSerialNumber,
     TResult Function(String deviceName)? onChangeDeviceName,
     TResult Function(String deviceType)? onChangeDeviceType,
@@ -507,12 +483,10 @@ class _$SetLoadingImpl implements SetLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
     required TResult Function(SelectTab value) selectTab,
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
     required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
     required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
     required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
@@ -523,11 +497,10 @@ class _$SetLoadingImpl implements SetLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
     TResult? Function(SelectTab value)? selectTab,
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -538,11 +511,10 @@ class _$SetLoadingImpl implements SetLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
     TResult Function(SelectTab value)? selectTab,
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -602,7 +574,6 @@ class _$SubmitDeviceDetailsImpl implements SubmitDeviceDetails {
     required TResult Function(int id) selectTab,
     required TResult Function() setLoading,
     required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
     required TResult Function(String serialNumber) onChangeSerialNumber,
     required TResult Function(String deviceName) onChangeDeviceName,
     required TResult Function(String deviceType) onChangeDeviceType,
@@ -617,7 +588,6 @@ class _$SubmitDeviceDetailsImpl implements SubmitDeviceDetails {
     TResult? Function(int id)? selectTab,
     TResult? Function()? setLoading,
     TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
     TResult? Function(String serialNumber)? onChangeSerialNumber,
     TResult? Function(String deviceName)? onChangeDeviceName,
     TResult? Function(String deviceType)? onChangeDeviceType,
@@ -632,7 +602,6 @@ class _$SubmitDeviceDetailsImpl implements SubmitDeviceDetails {
     TResult Function(int id)? selectTab,
     TResult Function()? setLoading,
     TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
     TResult Function(String serialNumber)? onChangeSerialNumber,
     TResult Function(String deviceName)? onChangeDeviceName,
     TResult Function(String deviceType)? onChangeDeviceType,
@@ -647,12 +616,10 @@ class _$SubmitDeviceDetailsImpl implements SubmitDeviceDetails {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
     required TResult Function(SelectTab value) selectTab,
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
     required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
     required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
     required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
@@ -663,11 +630,10 @@ class _$SubmitDeviceDetailsImpl implements SubmitDeviceDetails {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
     TResult? Function(SelectTab value)? selectTab,
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -678,11 +644,10 @@ class _$SubmitDeviceDetailsImpl implements SubmitDeviceDetails {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
     TResult Function(SelectTab value)? selectTab,
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -697,180 +662,6 @@ class _$SubmitDeviceDetailsImpl implements SubmitDeviceDetails {
 
 abstract class SubmitDeviceDetails implements AddDevicesEvent {
   factory SubmitDeviceDetails() = _$SubmitDeviceDetailsImpl;
-}
-
-/// @nodoc
-abstract class _$$OnChangeImplementDateImplCopyWith<$Res> {
-  factory _$$OnChangeImplementDateImplCopyWith(
-          _$OnChangeImplementDateImpl value,
-          $Res Function(_$OnChangeImplementDateImpl) then) =
-      __$$OnChangeImplementDateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({DateTime implementDate});
-}
-
-/// @nodoc
-class __$$OnChangeImplementDateImplCopyWithImpl<$Res>
-    extends _$AddDevicesEventCopyWithImpl<$Res, _$OnChangeImplementDateImpl>
-    implements _$$OnChangeImplementDateImplCopyWith<$Res> {
-  __$$OnChangeImplementDateImplCopyWithImpl(_$OnChangeImplementDateImpl _value,
-      $Res Function(_$OnChangeImplementDateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? implementDate = null,
-  }) {
-    return _then(_$OnChangeImplementDateImpl(
-      null == implementDate
-          ? _value.implementDate
-          : implementDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$OnChangeImplementDateImpl implements OnChangeImplementDate {
-  _$OnChangeImplementDateImpl(this.implementDate);
-
-  @override
-  final DateTime implementDate;
-
-  @override
-  String toString() {
-    return 'AddDevicesEvent.onChangeImplementDate(implementDate: $implementDate)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnChangeImplementDateImpl &&
-            (identical(other.implementDate, implementDate) ||
-                other.implementDate == implementDate));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, implementDate);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnChangeImplementDateImplCopyWith<_$OnChangeImplementDateImpl>
-      get copyWith => __$$OnChangeImplementDateImplCopyWithImpl<
-          _$OnChangeImplementDateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(int id) selectTab,
-    required TResult Function() setLoading,
-    required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
-    required TResult Function(String serialNumber) onChangeSerialNumber,
-    required TResult Function(String deviceName) onChangeDeviceName,
-    required TResult Function(String deviceType) onChangeDeviceType,
-  }) {
-    return onChangeImplementDate(implementDate);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(int id)? selectTab,
-    TResult? Function()? setLoading,
-    TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
-    TResult? Function(String serialNumber)? onChangeSerialNumber,
-    TResult? Function(String deviceName)? onChangeDeviceName,
-    TResult? Function(String deviceType)? onChangeDeviceType,
-  }) {
-    return onChangeImplementDate?.call(implementDate);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(int id)? selectTab,
-    TResult Function()? setLoading,
-    TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
-    TResult Function(String serialNumber)? onChangeSerialNumber,
-    TResult Function(String deviceName)? onChangeDeviceName,
-    TResult Function(String deviceType)? onChangeDeviceType,
-    required TResult orElse(),
-  }) {
-    if (onChangeImplementDate != null) {
-      return onChangeImplementDate(implementDate);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(SelectTab value) selectTab,
-    required TResult Function(SetLoading value) setLoading,
-    required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
-    required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
-    required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
-    required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
-  }) {
-    return onChangeImplementDate(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(SelectTab value)? selectTab,
-    TResult? Function(SetLoading value)? setLoading,
-    TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
-    TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
-    TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
-    TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
-  }) {
-    return onChangeImplementDate?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(SelectTab value)? selectTab,
-    TResult Function(SetLoading value)? setLoading,
-    TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
-    TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
-    TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
-    TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
-    required TResult orElse(),
-  }) {
-    if (onChangeImplementDate != null) {
-      return onChangeImplementDate(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class OnChangeImplementDate implements AddDevicesEvent {
-  factory OnChangeImplementDate(final DateTime implementDate) =
-      _$OnChangeImplementDateImpl;
-
-  DateTime get implementDate;
-  @JsonKey(ignore: true)
-  _$$OnChangeImplementDateImplCopyWith<_$OnChangeImplementDateImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -944,7 +735,6 @@ class _$OnChangeSerialNumberImpl implements OnChangeSerialNumber {
     required TResult Function(int id) selectTab,
     required TResult Function() setLoading,
     required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
     required TResult Function(String serialNumber) onChangeSerialNumber,
     required TResult Function(String deviceName) onChangeDeviceName,
     required TResult Function(String deviceType) onChangeDeviceType,
@@ -959,7 +749,6 @@ class _$OnChangeSerialNumberImpl implements OnChangeSerialNumber {
     TResult? Function(int id)? selectTab,
     TResult? Function()? setLoading,
     TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
     TResult? Function(String serialNumber)? onChangeSerialNumber,
     TResult? Function(String deviceName)? onChangeDeviceName,
     TResult? Function(String deviceType)? onChangeDeviceType,
@@ -974,7 +763,6 @@ class _$OnChangeSerialNumberImpl implements OnChangeSerialNumber {
     TResult Function(int id)? selectTab,
     TResult Function()? setLoading,
     TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
     TResult Function(String serialNumber)? onChangeSerialNumber,
     TResult Function(String deviceName)? onChangeDeviceName,
     TResult Function(String deviceType)? onChangeDeviceType,
@@ -989,12 +777,10 @@ class _$OnChangeSerialNumberImpl implements OnChangeSerialNumber {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
     required TResult Function(SelectTab value) selectTab,
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
     required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
     required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
     required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
@@ -1005,11 +791,10 @@ class _$OnChangeSerialNumberImpl implements OnChangeSerialNumber {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
     TResult? Function(SelectTab value)? selectTab,
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -1020,11 +805,10 @@ class _$OnChangeSerialNumberImpl implements OnChangeSerialNumber {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
     TResult Function(SelectTab value)? selectTab,
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -1117,7 +901,6 @@ class _$OnChangeDeviceNameImpl implements OnChangeDeviceName {
     required TResult Function(int id) selectTab,
     required TResult Function() setLoading,
     required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
     required TResult Function(String serialNumber) onChangeSerialNumber,
     required TResult Function(String deviceName) onChangeDeviceName,
     required TResult Function(String deviceType) onChangeDeviceType,
@@ -1132,7 +915,6 @@ class _$OnChangeDeviceNameImpl implements OnChangeDeviceName {
     TResult? Function(int id)? selectTab,
     TResult? Function()? setLoading,
     TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
     TResult? Function(String serialNumber)? onChangeSerialNumber,
     TResult? Function(String deviceName)? onChangeDeviceName,
     TResult? Function(String deviceType)? onChangeDeviceType,
@@ -1147,7 +929,6 @@ class _$OnChangeDeviceNameImpl implements OnChangeDeviceName {
     TResult Function(int id)? selectTab,
     TResult Function()? setLoading,
     TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
     TResult Function(String serialNumber)? onChangeSerialNumber,
     TResult Function(String deviceName)? onChangeDeviceName,
     TResult Function(String deviceType)? onChangeDeviceType,
@@ -1162,12 +943,10 @@ class _$OnChangeDeviceNameImpl implements OnChangeDeviceName {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
     required TResult Function(SelectTab value) selectTab,
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
     required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
     required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
     required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
@@ -1178,11 +957,10 @@ class _$OnChangeDeviceNameImpl implements OnChangeDeviceName {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
     TResult? Function(SelectTab value)? selectTab,
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -1193,11 +971,10 @@ class _$OnChangeDeviceNameImpl implements OnChangeDeviceName {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
     TResult Function(SelectTab value)? selectTab,
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -1290,7 +1067,6 @@ class _$OnChangeDeviceTypeImpl implements OnChangeDeviceType {
     required TResult Function(int id) selectTab,
     required TResult Function() setLoading,
     required TResult Function() submitDeviceDetails,
-    required TResult Function(DateTime implementDate) onChangeImplementDate,
     required TResult Function(String serialNumber) onChangeSerialNumber,
     required TResult Function(String deviceName) onChangeDeviceName,
     required TResult Function(String deviceType) onChangeDeviceType,
@@ -1305,7 +1081,6 @@ class _$OnChangeDeviceTypeImpl implements OnChangeDeviceType {
     TResult? Function(int id)? selectTab,
     TResult? Function()? setLoading,
     TResult? Function()? submitDeviceDetails,
-    TResult? Function(DateTime implementDate)? onChangeImplementDate,
     TResult? Function(String serialNumber)? onChangeSerialNumber,
     TResult? Function(String deviceName)? onChangeDeviceName,
     TResult? Function(String deviceType)? onChangeDeviceType,
@@ -1320,7 +1095,6 @@ class _$OnChangeDeviceTypeImpl implements OnChangeDeviceType {
     TResult Function(int id)? selectTab,
     TResult Function()? setLoading,
     TResult Function()? submitDeviceDetails,
-    TResult Function(DateTime implementDate)? onChangeImplementDate,
     TResult Function(String serialNumber)? onChangeSerialNumber,
     TResult Function(String deviceName)? onChangeDeviceName,
     TResult Function(String deviceType)? onChangeDeviceType,
@@ -1335,12 +1109,10 @@ class _$OnChangeDeviceTypeImpl implements OnChangeDeviceType {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
     required TResult Function(SelectTab value) selectTab,
     required TResult Function(SetLoading value) setLoading,
     required TResult Function(SubmitDeviceDetails value) submitDeviceDetails,
-    required TResult Function(OnChangeImplementDate value)
-        onChangeImplementDate,
     required TResult Function(OnChangeSerialNumber value) onChangeSerialNumber,
     required TResult Function(OnChangeDeviceName value) onChangeDeviceName,
     required TResult Function(OnChangeDeviceType value) onChangeDeviceType,
@@ -1351,11 +1123,10 @@ class _$OnChangeDeviceTypeImpl implements OnChangeDeviceType {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
     TResult? Function(SelectTab value)? selectTab,
     TResult? Function(SetLoading value)? setLoading,
     TResult? Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult? Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult? Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult? Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult? Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -1366,11 +1137,10 @@ class _$OnChangeDeviceTypeImpl implements OnChangeDeviceType {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
     TResult Function(SelectTab value)? selectTab,
     TResult Function(SetLoading value)? setLoading,
     TResult Function(SubmitDeviceDetails value)? submitDeviceDetails,
-    TResult Function(OnChangeImplementDate value)? onChangeImplementDate,
     TResult Function(OnChangeSerialNumber value)? onChangeSerialNumber,
     TResult Function(OnChangeDeviceName value)? onChangeDeviceName,
     TResult Function(OnChangeDeviceType value)? onChangeDeviceType,
@@ -1402,6 +1172,8 @@ mixin _$AddDevicesState {
   bool get isLoaded => throw _privateConstructorUsedError;
   bool get isSubmitted => throw _privateConstructorUsedError;
   DeviceDataModel get deviceData => throw _privateConstructorUsedError;
+  List<UserRegisteredDevice>? get deviceList =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AddDevicesStateCopyWith<AddDevicesState> get copyWith =>
@@ -1421,7 +1193,8 @@ abstract class $AddDevicesStateCopyWith<$Res> {
       bool isLoading,
       bool isLoaded,
       bool isSubmitted,
-      DeviceDataModel deviceData});
+      DeviceDataModel deviceData,
+      List<UserRegisteredDevice>? deviceList});
 
   $ResponseModelCopyWith<$Res> get submitStatus;
   $DeviceDataModelCopyWith<$Res> get deviceData;
@@ -1447,6 +1220,7 @@ class _$AddDevicesStateCopyWithImpl<$Res, $Val extends AddDevicesState>
     Object? isLoaded = null,
     Object? isSubmitted = null,
     Object? deviceData = null,
+    Object? deviceList = freezed,
   }) {
     return _then(_value.copyWith(
       selectedTab: null == selectedTab
@@ -1477,6 +1251,10 @@ class _$AddDevicesStateCopyWithImpl<$Res, $Val extends AddDevicesState>
           ? _value.deviceData
           : deviceData // ignore: cast_nullable_to_non_nullable
               as DeviceDataModel,
+      deviceList: freezed == deviceList
+          ? _value.deviceList
+          : deviceList // ignore: cast_nullable_to_non_nullable
+              as List<UserRegisteredDevice>?,
     ) as $Val);
   }
 
@@ -1512,7 +1290,8 @@ abstract class _$$AddDevicesStateImplCopyWith<$Res>
       bool isLoading,
       bool isLoaded,
       bool isSubmitted,
-      DeviceDataModel deviceData});
+      DeviceDataModel deviceData,
+      List<UserRegisteredDevice>? deviceList});
 
   @override
   $ResponseModelCopyWith<$Res> get submitStatus;
@@ -1538,6 +1317,7 @@ class __$$AddDevicesStateImplCopyWithImpl<$Res>
     Object? isLoaded = null,
     Object? isSubmitted = null,
     Object? deviceData = null,
+    Object? deviceList = freezed,
   }) {
     return _then(_$AddDevicesStateImpl(
       selectedTab: null == selectedTab
@@ -1568,6 +1348,10 @@ class __$$AddDevicesStateImplCopyWithImpl<$Res>
           ? _value.deviceData
           : deviceData // ignore: cast_nullable_to_non_nullable
               as DeviceDataModel,
+      deviceList: freezed == deviceList
+          ? _value._deviceList
+          : deviceList // ignore: cast_nullable_to_non_nullable
+              as List<UserRegisteredDevice>?,
     ));
   }
 }
@@ -1582,7 +1366,9 @@ class _$AddDevicesStateImpl implements _AddDevicesState {
       required this.isLoading,
       required this.isLoaded,
       required this.isSubmitted,
-      required this.deviceData});
+      required this.deviceData,
+      final List<UserRegisteredDevice>? deviceList})
+      : _deviceList = deviceList;
 
   @override
   final int selectedTab;
@@ -1598,10 +1384,19 @@ class _$AddDevicesStateImpl implements _AddDevicesState {
   final bool isSubmitted;
   @override
   final DeviceDataModel deviceData;
+  final List<UserRegisteredDevice>? _deviceList;
+  @override
+  List<UserRegisteredDevice>? get deviceList {
+    final value = _deviceList;
+    if (value == null) return null;
+    if (_deviceList is EqualUnmodifiableListView) return _deviceList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'AddDevicesState(selectedTab: $selectedTab, indexNumber: $indexNumber, submitStatus: $submitStatus, isLoading: $isLoading, isLoaded: $isLoaded, isSubmitted: $isSubmitted, deviceData: $deviceData)';
+    return 'AddDevicesState(selectedTab: $selectedTab, indexNumber: $indexNumber, submitStatus: $submitStatus, isLoading: $isLoading, isLoaded: $isLoaded, isSubmitted: $isSubmitted, deviceData: $deviceData, deviceList: $deviceList)';
   }
 
   @override
@@ -1622,12 +1417,22 @@ class _$AddDevicesStateImpl implements _AddDevicesState {
             (identical(other.isSubmitted, isSubmitted) ||
                 other.isSubmitted == isSubmitted) &&
             (identical(other.deviceData, deviceData) ||
-                other.deviceData == deviceData));
+                other.deviceData == deviceData) &&
+            const DeepCollectionEquality()
+                .equals(other._deviceList, _deviceList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedTab, indexNumber,
-      submitStatus, isLoading, isLoaded, isSubmitted, deviceData);
+  int get hashCode => Object.hash(
+      runtimeType,
+      selectedTab,
+      indexNumber,
+      submitStatus,
+      isLoading,
+      isLoaded,
+      isSubmitted,
+      deviceData,
+      const DeepCollectionEquality().hash(_deviceList));
 
   @JsonKey(ignore: true)
   @override
@@ -1645,7 +1450,8 @@ abstract class _AddDevicesState implements AddDevicesState {
       required final bool isLoading,
       required final bool isLoaded,
       required final bool isSubmitted,
-      required final DeviceDataModel deviceData}) = _$AddDevicesStateImpl;
+      required final DeviceDataModel deviceData,
+      final List<UserRegisteredDevice>? deviceList}) = _$AddDevicesStateImpl;
 
   @override
   int get selectedTab;
@@ -1661,6 +1467,8 @@ abstract class _AddDevicesState implements AddDevicesState {
   bool get isSubmitted;
   @override
   DeviceDataModel get deviceData;
+  @override
+  List<UserRegisteredDevice>? get deviceList;
   @override
   @JsonKey(ignore: true)
   _$$AddDevicesStateImplCopyWith<_$AddDevicesStateImpl> get copyWith =>

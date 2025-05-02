@@ -14,7 +14,7 @@ import 'package:ldms_mobile_app/custom_widgets/profile_picture_widget.dart';
 import 'package:ldms_mobile_app/custom_widgets/custom_icon_button.dart';
 import 'package:ldms_mobile_app/custom_widgets/tab_menu_card.dart';
 import 'package:ldms_mobile_app/screens/away/away.dart';
-import 'package:ldms_mobile_app/screens/edit_existing%20device/edit_existing%20device.dart';
+import 'package:ldms_mobile_app/screens/add_devices/widgets/edit_existing_device.dart';
 import 'package:ldms_mobile_app/screens/home/bloc/home_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -102,12 +102,9 @@ class Settings extends StatelessWidget {
                   padding: const EdgeInsets.all(12.0),
                   child: Row(
                     children: [
-                      ProfilePictureWidget(
-                          profilePictureUrl: userProfilePicture),
+                      ProfilePictureWidget(profilePictureUrl: userProfilePicture),
                       SizedBox(width: 12.0),
-                      HeadingSubheadingWidget(
-                          heading: "Hello, Jakob Bergson",
-                          subHeading: 'Administrator'),
+                      HeadingSubheadingWidget(heading: "Hello, Jakob Bergson", subHeading: 'Administrator'),
                     ],
                   ),
                 ),
@@ -121,18 +118,14 @@ class Settings extends StatelessWidget {
                   width: screenWidth,
                   padding: const EdgeInsets.all(14.0),
                   decoration: BoxDecoration(
-                    color: Colors.white
-                        .withOpacity(0.8), // background color of the square
+                    color: Colors.white.withOpacity(0.8), // background color of the square
                     borderRadius: BorderRadius.circular(18.0), // border radius
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("Basic Settings",
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey)),
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey)),
                       SizedBox(
                         height: 16,
                       ),
@@ -153,9 +146,7 @@ class Settings extends StatelessWidget {
                                   width: 12,
                                 ),
                                 Text("Edit username  & password",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500)),
+                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
                               ],
                             ),
                           ),
@@ -174,8 +165,7 @@ class Settings extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => EditExistingDevice()),
+                            MaterialPageRoute(builder: (context) => EditExistingDevice()),
                           );
                         },
                         child: Row(
@@ -195,9 +185,7 @@ class Settings extends StatelessWidget {
                                     width: 12,
                                   ),
                                   Text("Edit existing device",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500)),
+                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
                                 ],
                               ),
                             ),
@@ -236,10 +224,7 @@ class Settings extends StatelessWidget {
                                   SizedBox(
                                     width: 12,
                                   ),
-                                  Text("I am away",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500)),
+                                  Text("I am away", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
                                 ],
                               ),
                             ),
@@ -288,8 +273,7 @@ class TabBarSection extends StatelessWidget {
                     ExploreTabTypes.list.length,
                     (index) => TabMenuCard(
                       onClick: () {
-                        BlocProvider.of<HomeBloc>(context)
-                            .add(HomeEvent.selectTab(index));
+                        BlocProvider.of<HomeBloc>(context).add(HomeEvent.selectTab(index));
                       },
                       label: ExploreTabTypes.list[index]["name"],
                       iconUrl: ExploreTabTypes.list[index]["iconUrl"],
@@ -347,22 +331,17 @@ class OrderHistoryCard extends StatelessWidget {
                 children: [
                   Text("Order 1", style: TextStyle(color: Colors.black)),
                   Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 3, horizontal: 18),
+                      padding: EdgeInsets.symmetric(vertical: 3, horizontal: 18),
                       decoration: BoxDecoration(
                         color: statusColor.withOpacity(0.1), // Background color
-                        borderRadius:
-                            BorderRadius.circular(18), // Rounded corners
+                        borderRadius: BorderRadius.circular(18), // Rounded corners
                         // border: Border.all(
                         //   color: statusColor,
                         //   width: 1, // Border width
                         // ),
                       ),
                       child: Text("Pending",
-                          style: TextStyle(
-                              color: statusColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400))),
+                          style: TextStyle(color: statusColor, fontSize: 12, fontWeight: FontWeight.w400))),
                 ],
               ),
               Divider(
@@ -391,12 +370,8 @@ class OrderHistoryCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(title,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black)),
-                            Text("Status: $status",
-                                style: TextStyle(color: Colors.black)),
+                            Text(title, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+                            Text("Status: $status", style: TextStyle(color: Colors.black)),
                           ],
                         ),
                       ],
@@ -407,8 +382,7 @@ class OrderHistoryCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(title, style: TextStyle(color: Colors.black)),
-                      Text("Statusrr: $status",
-                          style: TextStyle(color: Colors.black)),
+                      Text("Statusrr: $status", style: TextStyle(color: Colors.black)),
                     ],
                   ),
                 ],
@@ -479,8 +453,7 @@ void _showCustomDialog(BuildContext context) {
                         );
                       }).toList(),
                       onChanged: (value) {},
-                      validator: (value) =>
-                          value == null ? 'Please select a category' : null,
+                      validator: (value) => value == null ? 'Please select a category' : null,
                     ),
                   ),
                   if (_category == 'Other') ...[
@@ -504,8 +477,7 @@ void _showCustomDialog(BuildContext context) {
                       onChanged: (value) {
                         _newCategory = value;
                       },
-                      validator: (value) =>
-                          value!.isEmpty ? 'Please enter a category' : null,
+                      validator: (value) => value!.isEmpty ? 'Please enter a category' : null,
                     ),
                   ],
                   const SizedBox(height: 16),
@@ -526,8 +498,7 @@ void _showCustomDialog(BuildContext context) {
                       fillColor: Colors.grey[200],
                     ),
                     onChanged: (value) {},
-                    validator: (value) =>
-                        value!.isEmpty ? 'Please enter a task title' : null,
+                    validator: (value) => value!.isEmpty ? 'Please enter a task title' : null,
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -560,12 +531,9 @@ void _showCustomDialog(BuildContext context) {
                       // }
                     },
                     controller: TextEditingController(
-                      text: _reminderTime == null
-                          ? ''
-                          : _reminderTime!.format(context),
+                      text: _reminderTime == null ? '' : _reminderTime!.format(context),
                     ),
-                    validator: (value) =>
-                        value!.isEmpty ? 'Please pick a reminder time' : null,
+                    validator: (value) => value!.isEmpty ? 'Please pick a reminder time' : null,
                   ),
                   const SizedBox(height: 20),
                   Row(
@@ -575,14 +543,12 @@ void _showCustomDialog(BuildContext context) {
                         width: screenWidth / 2.5,
                         child: CustomButton(
                           inputText: "CANCEL",
-                          backgroundColor:
-                              const Color.fromARGB(255, 255, 255, 255),
+                          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                           fontColor: AppColors.customButtonColor,
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                           onButtonPressed: () {
-                            Navigator.pop(
-                                context); // Navigate back to the previous screen
+                            Navigator.pop(context); // Navigate back to the previous screen
                           },
                           borderRadius: 8,
                           borderColor: AppColors.customButtonColor,

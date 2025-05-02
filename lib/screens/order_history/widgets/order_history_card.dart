@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ldms_mobile_app/constants/app_colors.dart';
 import 'package:ldms_mobile_app/custom_widgets/custom_icon_button.dart';
@@ -19,7 +18,7 @@ class OrderHistoryCard extends StatelessWidget {
     required this.orderDate,
   });
   void onPressed() {
-    print('Icon pressed');
+    // print('Icon pressed');
   }
 
   @override
@@ -98,36 +97,37 @@ class OrderHistoryCard extends StatelessWidget {
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(orderDate, style: const TextStyle(color: Colors.black)),
+                      const SizedBox(height: 10),
                       // Text(orderDate, style: const TextStyle(color: Colors.black)),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //   children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
+                        decoration: BoxDecoration(
+                          color: statusColor.withOpacity(0.1), // Background color
+                          borderRadius: BorderRadius.circular(18), // Rounded corners
+                        ),
+                        child: Text(
+                          orderStatusName,
+                          style: TextStyle(color: statusColor, fontSize: 12, fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 ],
               ),
-              const Divider(
-                color: Colors.grey, // Line color
-                thickness: 0.5, // Line thickness
-                indent: 0, // Left spacing
-                endIndent: 0, // Right spacing
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 18),
-                    decoration: BoxDecoration(
-                      color: statusColor.withOpacity(0.1), // Background color
-                      borderRadius: BorderRadius.circular(18), // Rounded corners
-                    ),
-                    child: Text(
-                      orderStatusName,
-                      style: TextStyle(color: statusColor, fontSize: 12, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-              ),
+              // const Divider(
+              //   color: Colors.grey, // Line color
+              //   thickness: 0.5, // Line thickness
+              //   indent: 0, // Left spacing
+              //   endIndent: 0, // Right spacing
+              // ),
             ],
           ),
         ),
